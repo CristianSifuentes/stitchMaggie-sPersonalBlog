@@ -9,6 +9,34 @@ interface EssayCollectionCardProps {
   essay: EssaySummary;
 }
 
+function EssayVisual({ visual }: Pick<EssaySummary, 'visual'>) {
+  if (visual === 'bulb') {
+    return (
+      <div className="visual visual-bulb" aria-hidden>
+        <div className="bulb-core" />
+      </div>
+    );
+  }
+
+  if (visual === 'cards') {
+    return (
+      <div className="visual visual-cards" aria-hidden>
+        <div className="paper paper-left" />
+        <div className="paper paper-center" />
+        <div className="paper paper-right" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="visual visual-planet" aria-hidden>
+      <div className="planet-core" />
+      <div className="planet-ring" />
+      <span className="planet-dot" />
+    </div>
+  );
+}
+
 function EssayCollectionCardImpl({ essay }: EssayCollectionCardProps) {
   const queryClient = useQueryClient();
 
@@ -20,21 +48,14 @@ function EssayCollectionCardImpl({ essay }: EssayCollectionCardProps) {
   }, [essay.slug, queryClient]);
 
   return (
-    <article className="essay-card">
+    <article className="essay-collection-card">
       <Link to={APP_ROUTES.writingDetail(essay.slug)} onMouseEnter={prefetchEssay} onFocus={prefetchEssay}>
-        <img src={essay.heroImageUrl} alt={essay.title} loading="lazy" />
-        <div className="essay-card-content">
-          <span className="essay-category">{essay.category}</span>
-          <h3>{essay.title}</h3>
-          <p>{essay.excerpt}</p>
-          <small>
-            {new Date(essay.publishedAt).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}{' '}
-            · {essay.readTimeMinutes} min read
-          </small>
+        <div className="essay-collection-card-visual">
+          <EssayVisual visual={essay.visual} />
+        </div>
+
+        <div className="essay-collection-card-copy">
+          <h2>{essay.title}</h2>
         </div>
       </Link>
     </article>

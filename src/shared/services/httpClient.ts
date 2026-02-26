@@ -28,85 +28,93 @@ const mockPosts: Post[] = [
 
 const essayCollection: EssayDetail[] = [
   {
-    slug: 'the-web-is-a-living-document',
-    title: 'The Web is a Living Document',
-    excerpt:
-      'The web was never meant to be static. It expands and contracts with context, device, and intention.',
+    slug: 'ai-chatbots-undermining-enlightenment',
+    title: 'A Treatise on AI Chatbots Undermining the Enlightenment',
+    excerpt: 'Why probabilistic answers can flatten ambiguity, nuance, and critical thinking in public discourse.',
     readTimeMinutes: 12,
     publishedAt: '2023-10-12',
-    heroImageUrl:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDSbPH150avFgvyo7QU20uuYffKHyRJu-fBEbP3rsGPX4FmwbRgHbxJryy6dpsJjaKQvXLgqTvB9q4qnOjxGngANB4123F46zbRC-wHVm_TDbn70sVcD3gNxd-b8XRQPVjI05jBSi-9d7gPzFtHsZVcLm-nzcFlkbPbX0zLCCNcuY146QTIE6TF-TuLMbxWvV3TOzHKmCtDc3c3A3ll3Hqxwfn3fi91L3aFlLJ2YD6o7DmSTvxtodIcXcZTtvSn4PmOv6D7An-I_v0',
+    heroImageUrl: 'https://images.unsplash.com/photo-1677442135136-760c813028c0?auto=format&fit=crop&w=1400&q=80',
     category: 'engineering',
-    author: 'Marcus Aurelius',
-    authorRole: 'Designer & Developer',
-    authorAvatarUrl:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwHm737L6zXgU2-HOyDygzuYXVrsEJ9hxYgDSepz6yYpU0oXBgU_S4-Tv5BSFs9626r4Dt_Z0QIz8pfSw_4HHQUNQ4KCt9XHN-_zFETyMewzuqmk2l7BPgL5L2K0J6CItV75KceNzZYKC5EGfDywzr3z-P5Z5SBQ2elcMGGH9mqAMgRDxUxoIfs7i-0U78IEWRBy0PMWV49cUvp0ZQjwhizHtj98Rfhr33QFPgQuZgbBNGwzy_rqk4919sqrh4t1UvMeNOnVx1_48',
-    illustrationCredit: 'Studio Fluids',
-    body: {
-      intro:
-        'The internet was never meant to be static. It breathes, expands, and contracts based on the device, the user, and the context.',
-      sectionTitle: 'Embracing Fluidity',
-      sectionBody:
-        'Fluidity is not just responsive breakpoints. It is a design philosophy: suggest structure, but leave enough room for adaptation.',
-      quote:
-        'The medium is the message, but the medium keeps changing. To design for the web is to design for change itself.',
-      typographyTitle: 'The Role of Typography',
-      typographyBody:
-        'Typography is the anchor in a fluid interface. With relational scale and variable rhythm, reading remains legible and expressive.',
-      typographyBody2:
-        'A serif can slow the eye and invite depth; a sans-serif can increase scanning speed. Type controls pace and emotion.',
-      conclusion:
-        'The web is not a canvas, it is a living landscape. We plant content, shape constraints, and let environments complete the experience.',
-      figureImageUrl:
-        'https://lh3.googleusercontent.com/aida-public/AB6AXuCAxgGPTklK9jLRRfociqT5m4UFUlm0oYAq2iv11ijbYv8qjiEbXJVZr1dQOukJaGzdvNFkNF2eC1Mo32VJvLzxhEg_9y-Wwu3aEDuiO4F7fWHvatV0hDxQEDcmtZ4LNxYIgOhnRgYcQd80q05sNMuxu-FigwGK2irT5Rf5zPLIYP5pDVEvWQjolap8tCJwqLtLHAlZX8eDUtnno9FNOpd_qIKsi68I4DOfINHlmO09oYdXPOvrqRmJcZljbBvE9Mpz5BLIlh-3xPk',
-    },
-  },
-  {
-    slug: 'culture-is-an-interface',
-    title: 'Culture is an Interface',
-    excerpt: 'How tools, rituals, and software patterns become cognitive interfaces for modern communities.',
-    readTimeMinutes: 9,
-    publishedAt: '2024-02-03',
-    heroImageUrl: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1200&q=80',
-    category: 'anthropology',
+    visual: 'bulb',
     author: 'Maggie Appleton',
-    authorRole: 'Anthropologist & Illustrator',
+    authorRole: 'Design Anthropologist',
     authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
     illustrationCredit: 'Maggie Studio',
     body: {
-      intro: 'Interfaces are not neutral. They encode beliefs about what matters and how people should move through information.',
-      sectionTitle: 'Social Grammars',
-      sectionBody: 'Every product creates a grammar of belonging. Buttons and labels become behavioral scripts.',
-      quote: 'When culture meets code, interaction design becomes anthropology in motion.',
-      typographyTitle: 'Narrative Layouts',
-      typographyBody: 'Long-form digital writing benefits from generous whitespace, subtle rhythm, and visual punctuation.',
-      typographyBody2: 'Readers do not consume pages; they inhabit them. Pace is as important as hierarchy.',
-      conclusion: 'Designing writing spaces means designing memory, identity, and collective interpretation.',
-      figureImageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+      intro:
+        'Chatbots are excellent at plausible fluency. The risk appears when plausibility is mistaken for epistemic rigor, especially in educational and civic contexts.',
+      sectionTitle: 'The Legibility Trap',
+      sectionBody:
+        'Systems optimized for confidence and speed tend to reduce productive friction. Yet friction is often where inquiry and reflection actually happen.',
+      quote:
+        'A smooth answer is not always a deep answer. Sometimes intelligence looks like hesitation.',
+      typographyTitle: 'Narrative Interfaces',
+      typographyBody:
+        'Longform interfaces should reward slow reading. Headings, whitespace, and typographic cadence can preserve complexity instead of compressing it.',
+      typographyBody2:
+        'The question is not whether AI should write, but whether readers still have room to interpret.',
+      conclusion:
+        'Tools are never neutral. When writing systems collapse uncertainty, they reshape the social conditions of thinking itself.',
+      figureImageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80',
     },
   },
   {
-    slug: 'crafting-react-systems',
-    title: 'Crafting React Systems for Teams',
-    excerpt: 'Patterns for scaling React apps with feature boundaries, performance budgets, and collaborative autonomy.',
-    readTimeMinutes: 15,
-    publishedAt: '2025-01-15',
-    heroImageUrl: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1200&q=80',
-    category: 'engineering',
+    slug: 'pattern-language-of-project-xanadu',
+    title: 'The Pattern Language of Project Xanadu',
+    excerpt: 'Re-reading hypertext history as a set of durable interaction patterns for modern web architectures.',
+    readTimeMinutes: 10,
+    publishedAt: '2024-01-08',
+    heroImageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=80',
+    category: 'design',
+    visual: 'cards',
     author: 'Maggie Appleton',
-    authorRole: 'Design Engineer',
-    authorAvatarUrl: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80',
-    illustrationCredit: 'Field Notes Lab',
+    authorRole: 'Researcher & Writer',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Archive Remix',
     body: {
-      intro: 'A scalable React architecture is less about folder names and more about contracts between teams and layers.',
-      sectionTitle: 'Feature Boundaries',
-      sectionBody: 'Treat each domain as a product surface with its own view, service, and state boundaries.',
-      quote: 'Great frontend architecture is social architecture: code should mirror team conversations.',
-      typographyTitle: 'Performance as Design',
-      typographyBody: 'Deferred interactions, stable references, and selective memoization preserve UX under growth.',
-      typographyBody2: 'Measure first, optimize second. Performance work should follow profiling evidence.',
-      conclusion: 'React remains powerful when we build with constraints, clarity, and system-level intent.',
-      figureImageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80',
+      intro:
+        'Project Xanadu imagined documents as connected structures rather than isolated files. Its ambitions still feel contemporary.',
+      sectionTitle: 'From Pages to Graphs',
+      sectionBody:
+        'When interfaces expose relationships between fragments, users can reason across ideas instead of navigating siloed pages.',
+      quote: 'Hypertext is not navigation chrome. It is a way of thinking in public.',
+      typographyTitle: 'Composing Links',
+      typographyBody:
+        'Readable links, annotations, and references create cognitive scaffolding. They let interfaces teach through structure.',
+      typographyBody2:
+        'Designing a reading system means designing what can be discovered, compared, and remembered.',
+      conclusion: 'Xanadu remains useful as a provocation: software can preserve context instead of erasing it.',
+      figureImageUrl: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'meat-planet-illustrated-notes',
+    title: 'Meat Planet: The Illustrated Notes',
+    excerpt: 'A visual notebook about embodiment, computation, and the strange poetics of digital materiality.',
+    readTimeMinutes: 8,
+    publishedAt: '2024-05-20',
+    heroImageUrl: 'https://images.unsplash.com/photo-1579547621706-1a9c79d5f259?auto=format&fit=crop&w=1400&q=80',
+    category: 'anthropology',
+    visual: 'planet',
+    author: 'Maggie Appleton',
+    authorRole: 'Visual Essayist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Meat Planet Notebook',
+    body: {
+      intro:
+        'Bodies and interfaces are co-constructed. Every gesture on glass is both a physical act and a symbolic one.',
+      sectionTitle: 'Embodied Computation',
+      sectionBody:
+        'Touchscreens, haptics, and camera systems recruit the body into software logic. The interface is always biological and technical.',
+      quote: 'Digital culture is never disembodied; it simply hides its infrastructure in plain sight.',
+      typographyTitle: 'Drawing as Method',
+      typographyBody:
+        'Illustrated notes allow speculative thinking to stay unresolved. Ambiguity becomes a productive research state.',
+      typographyBody2:
+        'In practice, sketches can hold contradictory ideas longer than polished diagrams.',
+      conclusion:
+        'Visual essays help us think with materials, not just about them. They make theory tactile.',
+      figureImageUrl: 'https://images.unsplash.com/photo-1516382799247-87df95d790b7?auto=format&fit=crop&w=1400&q=80',
     },
   },
 ];

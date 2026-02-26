@@ -1,4 +1,5 @@
 export type EssayCategory = 'engineering' | 'design' | 'anthropology';
+export type EssayVisual = 'bulb' | 'cards' | 'planet';
 
 export interface EssaySummary {
   slug: string;
@@ -8,6 +9,7 @@ export interface EssaySummary {
   publishedAt: string;
   heroImageUrl: string;
   category: EssayCategory;
+  visual: EssayVisual;
 }
 
 export interface EssayDetail extends EssaySummary {
