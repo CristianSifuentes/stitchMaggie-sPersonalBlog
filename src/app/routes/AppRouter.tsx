@@ -8,6 +8,10 @@ const HomePage = lazy(() => import('@/features/home/views/HomePage').then((m) =>
 const GardenPage = lazy(() =>
   import('@/features/garden/views/GardenPage').then((m) => ({ default: m.GardenPage })),
 );
+const WritingPage = lazy(() =>
+  import('@/features/writing/views/WritingPage').then((m) => ({ default: m.WritingPage })),
+);
+const EssayPage = lazy(() => import('@/features/writing/views/EssayPage').then((m) => ({ default: m.EssayPage })));
 const AboutPage = lazy(() => import('@/features/about/views/AboutPage').then((m) => ({ default: m.AboutPage })));
 
 const router = createBrowserRouter([
@@ -21,6 +25,22 @@ const router = createBrowserRouter([
         element: (
           <FeatureFlagGuard feature="gardenEnabled">
             <GardenPage />
+          </FeatureFlagGuard>
+        ),
+      },
+      {
+        path: APP_ROUTES.writing.slice(1),
+        element: (
+          <FeatureFlagGuard feature="writingEnabled">
+            <WritingPage />
+          </FeatureFlagGuard>
+        ),
+      },
+      {
+        path: `${APP_ROUTES.writing.slice(1)}/:slug`,
+        element: (
+          <FeatureFlagGuard feature="writingEnabled">
+            <EssayPage />
           </FeatureFlagGuard>
         ),
       },

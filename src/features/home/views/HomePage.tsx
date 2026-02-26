@@ -17,9 +17,14 @@ export function HomePage() {
       <p className="focus-copy">{data.currentFocus}</p>
 
       <section className="garden-overview">
-        <h2>The Garden</h2>
-        <p>A digital garden is a collection of imperfect notes, essays, and ideas growing slowly over time.</p>
-        <Link to={APP_ROUTES.garden}>Learn more →</Link>
+        <div>
+          <h2>The Garden</h2>
+          <p>A digital garden is a collection of imperfect notes, essays, and ideas growing slowly over time.</p>
+        </div>
+        <div className="home-cta-stack">
+          <Link to={APP_ROUTES.garden}>Explore Garden →</Link>
+          <Link to={APP_ROUTES.writing}>Open Essays Collection →</Link>
+        </div>
       </section>
 
       <section className="post-grid">
