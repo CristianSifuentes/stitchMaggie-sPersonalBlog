@@ -1,6 +1,6 @@
-import { Post } from '@/shared/types/post';
+import { GardenEntry } from '@/shared/types/content';
 
 export interface GardenFilters {
-  query: string;
-  tag: 'all' | Post['tag'];
+  stage: 'all' | GardenEntry['stage'];
+  type: 'all' | GardenEntry['type'];
 }

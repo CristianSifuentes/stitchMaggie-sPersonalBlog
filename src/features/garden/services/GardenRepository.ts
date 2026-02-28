@@ -1,8 +1,8 @@
 import { httpClient } from '@/shared/services/httpClient';
-import { Post } from '@/shared/types/post';
+import { GardenEntry } from '@/shared/types/content';
 
 export class GardenRepository {
-  async listPosts() {
-    return httpClient.get<Post[]>('/posts');
+  listEntries() {
+    return httpClient.get<GardenEntry[]>('/garden');
   }
 }

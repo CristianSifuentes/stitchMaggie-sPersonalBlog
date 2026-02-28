@@ -1,32 +1,32 @@
-import { useMemo, useState, useDeferredValue } from 'react';
+import { useMemo, useState, useTransition } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { gardenManager } from '@/features/garden/services/GardenManager';
 import { GardenFilters } from '@/features/garden/types/garden';
 
-export function useGardenPosts() {
-  const [filters, setFilters] = useState<GardenFilters>({ query: '', tag: 'all' });
-  const deferredQuery = useDeferredValue(filters.query);
-  const postsQuery = useQuery({
-    queryKey: ['garden', 'posts'],
-    queryFn: () => gardenManager.listPosts(),
+export function useGardenEntries() {
+  const [isPending, startTransition] = useTransition();
+  const [filters, setFilters] = useState<GardenFilters>({ stage: 'all', type: 'all' });
+
+  const entriesQuery = useQuery({
+    queryKey: ['garden', 'entries'],
+    queryFn: () => gardenManager.listEntries(),
   });
 
-  const filteredPosts = useMemo(() => {
-    if (!postsQuery.data) {
+  const entries = useMemo(() => {
+    if (!entriesQuery.data) {
       return [];
     }
 
-    return postsQuery.data.filter((post) => {
-      const matchesTag = filters.tag === 'all' || post.tag === filters.tag;
-      const normalizedQuery = deferredQuery.toLowerCase();
-      const matchesQuery =
-        normalizedQuery.length === 0 ||
-        post.title.toLowerCase().includes(normalizedQuery) ||
-        post.description.toLowerCase().includes(normalizedQuery);
+    return gardenManager.applyFilters(entriesQuery.data, filters);
+  }, [entriesQuery.data, filters]);
 
-      return matchesTag && matchesQuery;
-    });
-  }, [postsQuery.data, filters.tag, deferredQuery]);
+  const setStage = (stage: GardenFilters['stage']) => {
+    startTransition(() => setFilters((current) => ({ ...current, stage })));
+  };
 
-  return { filters, setFilters, filteredPosts, isLoading: postsQuery.isLoading };
+  const setType = (type: GardenFilters['type']) => {
+    startTransition(() => setFilters((current) => ({ ...current, type })));
+  };
+
+  return { entries, filters, isLoading: entriesQuery.isLoading, isPending, setStage, setType };
 }
