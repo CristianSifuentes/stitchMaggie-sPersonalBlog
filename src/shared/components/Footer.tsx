@@ -2,7 +2,7 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <p>© 2023 Maggie Appleton</p>
+        <p>© 2024 Maggie Appleton. All rights reserved.</p>
         <div className="footer-links">
           <a href="#">Twitter</a>
           <a href="#">Github</a>
