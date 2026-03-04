@@ -1,6 +1,6 @@
 import { EssayDetail, EssaySummary } from '@/shared/types/essay';
 import { Post } from '@/shared/types/post';
-import { BookItem, GardenEntry, NoteItem, NowEntry, PatternItem, PodcastEpisode, SmidgeonItem } from '@/shared/types/content';
+import { BookItem, GardenEntry, NoteItem, NowEntry, PatternItem, PodcastEpisode, SmidgeonItem, TalkItem } from '@/shared/types/content';
 import { APP_ROUTES } from '@/app/config/routes';
 
 export interface HttpClient {
@@ -233,6 +233,70 @@ const podcasts: PodcastEpisode[] = [
   },
 ];
 
+const talks: TalkItem[] = [
+  {
+    id: 't1',
+    title: 'Building Scalable Design Systems',
+    description: 'A deep dive into creating robust component architecture for large product teams and enterprise interfaces.',
+    dateLabel: 'Oct 2023',
+    locationLabel: 'London',
+    kind: 'presentation',
+    stage: 'evergreen',
+    illustration: 'systems',
+    isFeatured: true,
+  },
+  {
+    id: 't2',
+    title: 'Digital Gardening 101',
+    description: 'An introduction to personal knowledge management and the craft of maintaining a living, evolving garden.',
+    dateLabel: 'Aug 2023',
+    locationLabel: 'New York',
+    kind: 'workshop',
+    stage: 'seedling',
+    illustration: 'botany',
+  },
+  {
+    id: 't3',
+    title: 'The Future of Web Interfaces',
+    description: 'Exploring AI-assisted products, spatial interactions, and why browser-native experiences still matter.',
+    dateLabel: 'Jun 2023',
+    locationLabel: 'Remote',
+    kind: 'presentation',
+    stage: 'budding',
+    illustration: 'future',
+  },
+  {
+    id: 't4',
+    title: 'UI Architecture Best Practices',
+    description: 'Principles and decision frameworks for building maintainable, accessible interfaces at scale.',
+    dateLabel: 'Jan 2023',
+    locationLabel: 'Berlin',
+    kind: 'presentation',
+    stage: 'evergreen',
+    illustration: 'structure',
+  },
+  {
+    id: 't5',
+    title: 'Design for Emotion',
+    description: 'How typography, pacing, and visual rhythm shape emotional tone in digital products.',
+    dateLabel: 'Nov 2022',
+    locationLabel: 'Paris',
+    kind: 'workshop',
+    stage: 'budding',
+    illustration: 'emotion',
+  },
+  {
+    id: 't6',
+    title: 'The Art of Documentation',
+    description: 'Treating docs as product surfaces to improve onboarding, developer flow, and team alignment.',
+    dateLabel: 'Sep 2022',
+    locationLabel: 'London',
+    kind: 'presentation',
+    stage: 'seedling',
+    illustration: 'writing',
+  },
+];
+
 const patterns: PatternItem[] = [
   {
     id: 'pt1',
@@ -311,6 +375,7 @@ const garden: GardenEntry[] = [
   { id: 'g-essay', type: 'essay', stage: 'budding', title: 'The Web is a Living Document', description: 'A longform essay on fluidity, typography, and designing for change.', imageUrl: essays[0].heroImageUrl, route: APP_ROUTES.writingDetail(essays[0].slug) },
   { id: 'g-note', type: 'note', stage: 'seedling', title: notes[0].title, description: notes[0].description, route: APP_ROUTES.notes },
   { id: 'g-pattern', type: 'pattern', stage: 'evergreen', title: patterns[0].title, description: 'Recurring design patterns and conceptual frameworks for digital tools and cognitive architecture.', route: APP_ROUTES.patterns },
+  { id: 'g-talk', type: 'talk', stage: talks[0].stage, title: talks[0].title, description: 'Presentations, workshops, and lectures on design systems, web interfaces, and knowledge tools.', route: APP_ROUTES.talks },
   { id: 'g-podcast', type: 'podcast', stage: 'evergreen', title: podcasts[0].title, description: 'Conversations, interviews, and audio explorations on design, systems, and digital craft.', route: APP_ROUTES.podcasts },
   { id: 'g-library', type: 'note', stage: 'budding', title: 'Library / Antilibrary', description: 'Books I like the idea of having read.', route: APP_ROUTES.library },
   { id: 'g-smidgeons', type: 'note', stage: 'seedling', title: 'Smidgeons Stream', description: 'A stream of links, papers, and tiny thoughts.', route: APP_ROUTES.smidgeons },
@@ -335,6 +400,7 @@ export const httpClient: HttpClient = {
     if (url === '/now') return nowLog as T;
     if (url === '/library') return books as T;
     if (url === '/patterns') return patterns as T;
+    if (url === '/talks') return talks as T;
     if (url === '/podcasts') return podcasts as T;
     if (url === '/smidgeons') return smidgeons as T;
     if (url === '/garden') return garden as T;

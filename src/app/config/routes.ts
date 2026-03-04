@@ -5,6 +5,7 @@ export const APP_ROUTES = {
   writingDetail: (slug: string) => `/garden/essays/${slug}`,
   notes: '/garden/notes',
   patterns: '/garden/patterns',
+  talks: '/garden/talks',
   podcasts: '/garden/podcasts',
   now: '/now',
   about: '/about',

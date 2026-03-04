@@ -24,6 +24,7 @@ export function GardenPage() {
           <option value="essay">Essay</option>
           <option value="note">Note</option>
           <option value="pattern">Pattern</option>
+          <option value="talk">Talk</option>
           <option value="podcast">Podcast</option>
           <option value="now">Now</option>
         </select>

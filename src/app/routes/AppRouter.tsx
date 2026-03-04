@@ -10,6 +10,7 @@ const WritingPage = lazy(() => import('@/features/writing/views/WritingPage').th
 const EssayPage = lazy(() => import('@/features/writing/views/EssayPage').then((m) => ({ default: m.EssayPage })));
 const NotesPage = lazy(() => import('@/features/notes/views/NotesPage').then((m) => ({ default: m.NotesPage })));
 const PatternsPage = lazy(() => import('@/features/patterns/views/PatternsPage').then((m) => ({ default: m.PatternsPage })));
+const TalksPage = lazy(() => import('@/features/talks/views/TalksPage').then((m) => ({ default: m.TalksPage })));
 const PodcastsPage = lazy(() => import('@/features/podcasts/views/PodcastsPage').then((m) => ({ default: m.PodcastsPage })));
 const NowPage = lazy(() => import('@/features/now/views/NowPage').then((m) => ({ default: m.NowPage })));
 const AboutPage = lazy(() => import('@/features/about/views/AboutPage').then((m) => ({ default: m.AboutPage })));
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
       },
       { path: APP_ROUTES.notes.slice(1), element: <NotesPage /> },
       { path: APP_ROUTES.patterns.slice(1), element: <PatternsPage /> },
+      { path: APP_ROUTES.talks.slice(1), element: <TalksPage /> },
       { path: APP_ROUTES.podcasts.slice(1), element: <PodcastsPage /> },
       { path: APP_ROUTES.now.slice(1), element: <NowPage /> },
       { path: APP_ROUTES.about.slice(1), element: <AboutPage /> },
