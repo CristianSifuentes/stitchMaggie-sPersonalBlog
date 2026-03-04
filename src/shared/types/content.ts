@@ -18,6 +18,19 @@ export interface BookItem {
   coverUrl: string;
 }
 
+export interface AntilibraryBook {
+  id: string;
+  title: string;
+  author: string;
+  summary: string;
+  coverUrl: string;
+  collection: 'reading' | 'to-read' | 'reference' | 'archive';
+  collectionLabel: string;
+  status: 'unread' | 'reading' | 'to-read' | 'reference' | 'archived';
+  stage: 'seedling' | 'budding' | 'evergreen';
+  accent: 'amber' | 'indigo' | 'green' | 'violet' | 'orange' | 'rose';
+}
+
 export interface PodcastEpisode {
   id: string;
   title: string;

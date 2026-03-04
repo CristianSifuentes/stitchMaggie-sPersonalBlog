@@ -7,6 +7,7 @@ export const APP_ROUTES = {
   patterns: '/garden/patterns',
   talks: '/garden/talks',
   podcasts: '/garden/podcasts',
+  antilibrary: '/garden/antilibrary',
   now: '/now',
   about: '/about',
   library: '/library',

@@ -1,6 +1,6 @@
 import { EssayDetail, EssaySummary } from '@/shared/types/essay';
 import { Post } from '@/shared/types/post';
-import { BookItem, GardenEntry, NoteItem, NowEntry, PatternItem, PodcastEpisode, SmidgeonItem, TalkItem } from '@/shared/types/content';
+import { AntilibraryBook, BookItem, GardenEntry, NoteItem, NowEntry, PatternItem, PodcastEpisode, SmidgeonItem, TalkItem } from '@/shared/types/content';
 import { APP_ROUTES } from '@/app/config/routes';
 
 export interface HttpClient {
@@ -163,6 +163,81 @@ const books: BookItem[] = [
   { id: 'b2', title: 'Cue the Sun! The Invention of Reality TV', coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxOPf_GGCCjn4S85X21ititGPCxu79iSil6JEHRW6Cm0bilx8DI7ixKlXXx8j3sVXtzj6TVfjpaHcN8hQbQtj6zZ3tk8GRCu1b_mHxpP7JVYEKz9oVaPk2T_AQ0AH8YEAAZzuni2vjQt0kqPUmzHDNxyZm6wJawT2z7GNMmLMlF-TtDi62Gw9r4HIFbHf1Vs_aVRemfz8vDOXiAas9TCtGJx77vQnJp6hWcJuM_er8ROK3Tku3CDyPhWmwwm2j952eYompLVs4dnc' },
   { id: 'b3', title: "The Invention of Nature: Alexander von Humboldt's New World", coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB86MBtTr3AnfiP1juo3x-MY6_phxRt1sINsCXhcQTFgZDgP9QKjCNhNvLUGITAbkSXnuVXgaNUuLkRuqQ5ou90VIjqHEH1U3enz725FkCozoNPdGIQa0-YvIHlcWmySXxYCV2_qKFprVoRW10KavqrCzdsGRi5Td2u4ngQman66A1shZFmZOMPu9hlBh_PyshC6Z2L70m4arsHR3fkdl-jgEnuZl8-cRJz1QX-jJDSVnCMaZzr-5d3eWMa0uJJ4YYQlu5ie3-ffqw' },
   { id: 'b4', title: 'The Age of Wonder', coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCf3OdHR2exsQYzYJsSfXGoLtYwWi7lL76NrRNjxZZ3CPuZhqjNy7fsPpo9nTYcA5R8VX2cT-oyuThG_mgpu9dal7jJ2qY-SCvgdEERupHqpN5FIg-J26c1y4Wuq7dMF86JYx6LgOgfljT6V3j0CqEoGVWcd003vzkqYhwMq2kPYW4QZW2_d9mFOdGwIcfjy5phluGO4ZzW6DTjtigS4rQGSzCtNw4Lg7GNTEDMtgbA30ja1XUBZU6fiS2_2cejGGRLpns-dRFB8Zw' },
+];
+
+const antilibrary: AntilibraryBook[] = [
+  {
+    id: 'al1',
+    title: 'The Order of Time',
+    author: 'Carlo Rovelli',
+    summary: 'Explores the physics of time and how our perception of "now" is a local phenomenon.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8e47rSqWQ-hjjg8dqY1yBwFFgENDV9wIIEGKRyUhs_-AeSwHOltGrTwiP0SIl67sMoZ90n-MXEGb9nwTioqxw3vS7JFAvDVRHoePo3zfepbhQQ5dLyFwZzqYmccWGGPU4RA2qZJRm5kT6Z3Itxh-WgXF-w40e1tAgXPoVFbciJaDymt4tbX50mfIjQONcYm2SiMPfa5oHW3eYU5VihPOYpWN8DvHfH3lncA3YNQYdgz3bfUtGgW2SCJ-manWSo5cbKQLbNM07-i8',
+    collection: 'to-read',
+    collectionLabel: 'To Read',
+    status: 'unread',
+    stage: 'seedling',
+    accent: 'amber',
+  },
+  {
+    id: 'al2',
+    title: 'Metaphors We Live By',
+    author: 'George Lakoff',
+    summary: 'A foundational text for cognitive linguistics and the metaphors that shape thought.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCznSakO7eqLgqaIuc9PQ1cEXaFUvlCPxURiTfIChC6EUyjF0v61QcKJsR1Jh4jcaGmKoUiEkrdwzBOP3MZiedBO6EUkFt-CmBiWtxsunrpX01-R4MEOR8cchONyuuSVGiboFiS8y-_xE-HC5PFYDY6Ss1a6G4f2PxFVhKlHJrIUbLwRVTWiZH5KqEH8vnJ15MfriSqBDlsoOLEEL0SbEOM0VRZeRqOMA54e8-v9yMcoy_3vEai-WDIVO4khCjdSDO7D_rFp5kMEbw',
+    collection: 'reference',
+    collectionLabel: 'Reference Only',
+    status: 'reference',
+    stage: 'evergreen',
+    accent: 'indigo',
+  },
+  {
+    id: 'al3',
+    title: 'Staying with the Trouble',
+    author: 'Donna J. Haraway',
+    summary: 'A provocation on multispecies justice and surviving on a damaged planet.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzBQjfYXET-0FtvqWd1lIVDtG5oGdQf8QEK2DUQyP8dthS-Xd0rKo9Reme_5tW_h-HdZ69v06eWKKB40eI1hymzsncSWB0rbXudzPFljg73KHKT42w8xTATwv9oEChylbnskXEQK6fhVLhVrNeyUpYtHvXnx0HdX2DwnOtVWb2A2yaqLFwl0jcMqx4avQ1tTqJyi6E1gb8zfCGTz8kOfZWviE92BN88PI3RXtuKkXBBlSXp5NyBnDvV535vLjvv9__fYXZSMqB6jk',
+    collection: 'to-read',
+    collectionLabel: 'To Read',
+    status: 'to-read',
+    stage: 'seedling',
+    accent: 'green',
+  },
+  {
+    id: 'al4',
+    title: 'Finite and Infinite Games',
+    author: 'James P. Carse',
+    summary: 'A distinction between playing to win and playing to keep the game going.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAPmrPEbxUhA6Qcgo_qOdX4RN9OsC821gEdIU4QO_XCX7ZVYgJ27NVeLZIVYv-q9A4hIAXj-sZvjjhKjJsoqVSBWBidz5aVKtUP8Zkt057NZnU5msK4QY17rbJVJrxjEz8KIF1C3bAWsW2une8P-jk7MiVrWzz1OfAFt0BVLKSr7MyuZBFO14d10I6TRIXWdg0cSZ2g9Awza2MJ4IEnsaDdNbDMYb4WQyliNdWgl4S6N2JEHc9PMwDvW2OZh90wtCma6_mu7DnC3tI',
+    collection: 'archive',
+    collectionLabel: 'Archives',
+    status: 'archived',
+    stage: 'evergreen',
+    accent: 'violet',
+  },
+  {
+    id: 'al5',
+    title: 'The Spell of the Sensuous',
+    author: 'David Abram',
+    summary: 'A phenomenology of perception and the link between language and the animate earth.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBoPBcRKruINsNNEXhsc6aDHkOS5XXzR16gtL14Xb-f2xj5TA7Ki6vzsQa9oFlo7sOgmH5hgR2uwVxQ7z_iRiNhBSnrOF7_rKvGXpB7ZQZmeRXrhJK5cWgxRwpUG44BzhV9XrPi1kUYNO0RF9ojvm7eOdSgnycaxfS908wSNNfbtQThoLhnYYs3IzIUOdVt6Y1pHSyJyrTdtGhy-qk1IxiGOsNLSOzXSxdL__F-GH3ny9KNE-QSCJjS4QGlUtsdlTGtGoi1_Fq6ZxM',
+    collection: 'reference',
+    collectionLabel: 'Reference Only',
+    status: 'reference',
+    stage: 'budding',
+    accent: 'orange',
+  },
+  {
+    id: 'al6',
+    title: 'Braiding Sweetgrass',
+    author: 'Robin Wall Kimmerer',
+    summary: 'Indigenous wisdom and scientific knowledge interwoven through the teachings of plants.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC82jXrF0__DVZ4OLQXUEewgcm0L--_NrIJUpBRsytakE8mwPkbornw9tYOCYvNKLVvEs3VF0f3d02t2eeK00sRdqDkt6tkUue00JccG_Xxzs7ohcg_aTDDm5CdJvuwAoa9GMaXmRQt5u1QxOYlLx_E9DnLd6LGN-W6Cc4itvU81E1y_EjYL0vmNWabC7ZOcD13hj4m8-SR62uDTWGdWvFi3aUKLJ0jPS6vEFEGiEsSpcmSxIhszYzHmvEHdGDphC2NPYjvM3sunqk',
+    collection: 'reading',
+    collectionLabel: 'Currently Reading',
+    status: 'reading',
+    stage: 'budding',
+    accent: 'rose',
+  },
 ];
 
 const podcasts: PodcastEpisode[] = [
@@ -377,6 +452,7 @@ const garden: GardenEntry[] = [
   { id: 'g-pattern', type: 'pattern', stage: 'evergreen', title: patterns[0].title, description: 'Recurring design patterns and conceptual frameworks for digital tools and cognitive architecture.', route: APP_ROUTES.patterns },
   { id: 'g-talk', type: 'talk', stage: talks[0].stage, title: talks[0].title, description: 'Presentations, workshops, and lectures on design systems, web interfaces, and knowledge tools.', route: APP_ROUTES.talks },
   { id: 'g-podcast', type: 'podcast', stage: 'evergreen', title: podcasts[0].title, description: 'Conversations, interviews, and audio explorations on design, systems, and digital craft.', route: APP_ROUTES.podcasts },
+  { id: 'g-antilibrary', type: 'note', stage: 'budding', title: 'Antilibrary', description: 'Unread books and reference shelves for future research and intellectual exploration.', route: APP_ROUTES.antilibrary },
   { id: 'g-library', type: 'note', stage: 'budding', title: 'Library / Antilibrary', description: 'Books I like the idea of having read.', route: APP_ROUTES.library },
   { id: 'g-smidgeons', type: 'note', stage: 'seedling', title: 'Smidgeons Stream', description: 'A stream of links, papers, and tiny thoughts.', route: APP_ROUTES.smidgeons },
 ];
@@ -399,6 +475,7 @@ export const httpClient: HttpClient = {
     if (url === '/notes') return notes as T;
     if (url === '/now') return nowLog as T;
     if (url === '/library') return books as T;
+    if (url === '/antilibrary') return antilibrary as T;
     if (url === '/patterns') return patterns as T;
     if (url === '/talks') return talks as T;
     if (url === '/podcasts') return podcasts as T;
