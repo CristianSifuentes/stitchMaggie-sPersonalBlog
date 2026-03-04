@@ -23,6 +23,7 @@ export function GardenPage() {
           <option value="all">All Types</option>
           <option value="essay">Essay</option>
           <option value="note">Note</option>
+          <option value="podcast">Podcast</option>
           <option value="now">Now</option>
         </select>
       </div>

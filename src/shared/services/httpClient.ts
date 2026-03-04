@@ -1,6 +1,6 @@
 import { EssayDetail, EssaySummary } from '@/shared/types/essay';
 import { Post } from '@/shared/types/post';
-import { BookItem, GardenEntry, NoteItem, NowEntry, SmidgeonItem } from '@/shared/types/content';
+import { BookItem, GardenEntry, NoteItem, NowEntry, PodcastEpisode, SmidgeonItem } from '@/shared/types/content';
 import { APP_ROUTES } from '@/app/config/routes';
 
 export interface HttpClient {
@@ -165,6 +165,74 @@ const books: BookItem[] = [
   { id: 'b4', title: 'The Age of Wonder', coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCf3OdHR2exsQYzYJsSfXGoLtYwWi7lL76NrRNjxZZ3CPuZhqjNy7fsPpo9nTYcA5R8VX2cT-oyuThG_mgpu9dal7jJ2qY-SCvgdEERupHqpN5FIg-J26c1y4Wuq7dMF86JYx6LgOgfljT6V3j0CqEoGVWcd003vzkqYhwMq2kPYW4QZW2_d9mFOdGwIcfjy5phluGO4ZzW6DTjtigS4rQGSzCtNw4Lg7GNTEDMtgbA30ja1XUBZU6fiS2_2cejGGRLpns-dRFB8Zw' },
 ];
 
+const podcasts: PodcastEpisode[] = [
+  {
+    id: 'p1',
+    title: 'The Future of Digital Gardens',
+    description: 'A deep dive into how we organize thoughts online, moving from static pages to living, breathing knowledge graphs.',
+    publishedLabel: 'Oct 2023',
+    durationLabel: '45 min',
+    stage: 'evergreen',
+    series: 'Evergreen Piece',
+    illustration: 'signal',
+    isFeatured: true,
+    isPopular: true,
+  },
+  {
+    id: 'p2',
+    title: 'Designing with AI Systems',
+    description: 'Discussing the intersection of LLMs and design tools, and how creative workflows are fundamentally shifting.',
+    publishedLabel: 'Sep 2023',
+    durationLabel: '52 min',
+    stage: 'budding',
+    series: 'Developing Idea',
+    illustration: 'neural',
+    isPopular: true,
+  },
+  {
+    id: 'p3',
+    title: 'Metaphors We Live By in UI',
+    description: 'Exploring how linguistic metaphors shape our interfaces and why we still use "folders" in a cloud-first world.',
+    publishedLabel: 'Aug 2023',
+    durationLabel: '38 min',
+    stage: 'evergreen',
+    series: 'Evergreen Piece',
+    illustration: 'atlas',
+    isPopular: true,
+  },
+  {
+    id: 'p4',
+    title: 'The Craft of Visual Thinking',
+    description: 'How to use drawing as a tool for understanding complex problems before touching a single line of code.',
+    publishedLabel: 'Jul 2023',
+    durationLabel: '60 min',
+    stage: 'seedling',
+    series: 'Initial Thoughts',
+    illustration: 'draft',
+  },
+  {
+    id: 'p5',
+    title: 'Building Knowledge Bases',
+    description: 'Practical strategies for managing digital notes across multiple tools without losing your mind.',
+    publishedLabel: 'Jun 2023',
+    durationLabel: '42 min',
+    stage: 'budding',
+    series: 'Developing Idea',
+    illustration: 'archive',
+  },
+  {
+    id: 'p6',
+    title: 'Architecture of Information',
+    description: 'Why the structure of our digital spaces matters as much as the content within them.',
+    publishedLabel: 'May 2023',
+    durationLabel: '55 min',
+    stage: 'evergreen',
+    series: 'Evergreen Piece',
+    illustration: 'blueprint',
+    isPopular: true,
+  },
+];
+
 const smidgeons: SmidgeonItem[] = [
   {
     id: 's1',
@@ -184,11 +252,15 @@ const garden: GardenEntry[] = [
   { id: 'g-now', type: 'now', stage: 'evergreen', title: 'January 2026', description: 'A new now update about parenthood, work constraints, and perspective.', route: APP_ROUTES.now },
   { id: 'g-essay', type: 'essay', stage: 'budding', title: 'The Web is a Living Document', description: 'A longform essay on fluidity, typography, and designing for change.', imageUrl: essays[0].heroImageUrl, route: APP_ROUTES.writingDetail(essays[0].slug) },
   { id: 'g-note', type: 'note', stage: 'seedling', title: notes[0].title, description: notes[0].description, route: APP_ROUTES.notes },
+  { id: 'g-podcast', type: 'podcast', stage: 'evergreen', title: podcasts[0].title, description: 'Conversations, interviews, and audio explorations on design, systems, and digital craft.', route: APP_ROUTES.podcasts },
   { id: 'g-library', type: 'note', stage: 'budding', title: 'Library / Antilibrary', description: 'Books I like the idea of having read.', route: APP_ROUTES.library },
   { id: 'g-smidgeons', type: 'note', stage: 'seedling', title: 'Smidgeons Stream', description: 'A stream of links, papers, and tiny thoughts.', route: APP_ROUTES.smidgeons },
 ];
 
-const essaySummaries: EssaySummary[] = essays.map(({ body: _body, ...summary }) => summary);
+const essaySummaries: EssaySummary[] = essays.map(({ body, ...summary }) => {
+  void body;
+  return summary;
+});
 
 export const httpClient: HttpClient = {
   async get<T>(url: string): Promise<T> {
@@ -203,6 +275,7 @@ export const httpClient: HttpClient = {
     if (url === '/notes') return notes as T;
     if (url === '/now') return nowLog as T;
     if (url === '/library') return books as T;
+    if (url === '/podcasts') return podcasts as T;
     if (url === '/smidgeons') return smidgeons as T;
     if (url === '/garden') return garden as T;
     throw new Error(`Unknown endpoint: ${url}`);
