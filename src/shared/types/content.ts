@@ -31,6 +31,17 @@ export interface PodcastEpisode {
   isPopular?: boolean;
 }
 
+export interface PatternItem {
+  id: string;
+  title: string;
+  description: string;
+  updatedLabel: string;
+  stage: 'seedling' | 'budding' | 'evergreen';
+  lens: string;
+  illustration: 'thread' | 'field' | 'ambient' | 'links' | 'veil' | 'sync';
+  isFeatured?: boolean;
+}
+
 export interface SmidgeonItem {
   id: string;
   date: string;
@@ -42,7 +53,7 @@ export interface SmidgeonItem {
 
 export interface GardenEntry {
   id: string;
-  type: 'now' | 'essay' | 'note' | 'podcast';
+  type: 'now' | 'essay' | 'note' | 'podcast' | 'pattern';
   stage: 'seedling' | 'budding' | 'evergreen';
   title: string;
   description: string;

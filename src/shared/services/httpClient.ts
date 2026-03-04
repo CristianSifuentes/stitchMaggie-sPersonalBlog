@@ -1,6 +1,6 @@
 import { EssayDetail, EssaySummary } from '@/shared/types/essay';
 import { Post } from '@/shared/types/post';
-import { BookItem, GardenEntry, NoteItem, NowEntry, PodcastEpisode, SmidgeonItem } from '@/shared/types/content';
+import { BookItem, GardenEntry, NoteItem, NowEntry, PatternItem, PodcastEpisode, SmidgeonItem } from '@/shared/types/content';
 import { APP_ROUTES } from '@/app/config/routes';
 
 export interface HttpClient {
@@ -233,6 +233,64 @@ const podcasts: PodcastEpisode[] = [
   },
 ];
 
+const patterns: PatternItem[] = [
+  {
+    id: 'pt1',
+    title: 'Narrative Threading',
+    description: 'Techniques for maintaining semantic context across non-linear information paths in hyperlinked environments.',
+    updatedLabel: 'Updated 2 days ago',
+    stage: 'evergreen',
+    lens: 'Knowledge Design',
+    illustration: 'thread',
+    isFeatured: true,
+  },
+  {
+    id: 'pt2',
+    title: 'Spatial Interfaces',
+    description: 'Mapping digital information architecture to physical human intuition and muscle memory for better navigation.',
+    updatedLabel: 'Updated 1 week ago',
+    stage: 'budding',
+    lens: 'Navigation',
+    illustration: 'field',
+  },
+  {
+    id: 'pt3',
+    title: 'Ambient Awareness',
+    description: 'Designing low-friction signals of activity and presence in collaborative digital environments without noise.',
+    updatedLabel: 'Updated 3 days ago',
+    stage: 'seedling',
+    lens: 'Collaboration',
+    illustration: 'ambient',
+  },
+  {
+    id: 'pt4',
+    title: 'Bi-directional Links',
+    description: 'The architectural foundation of the associative web, allowing for mutual context and effortless discovery.',
+    updatedLabel: 'Updated 5 months ago',
+    stage: 'evergreen',
+    lens: 'Information Architecture',
+    illustration: 'links',
+  },
+  {
+    id: 'pt5',
+    title: 'Progressive Disclosure',
+    description: 'Managing system complexity by revealing information only as needed to achieve specific user goals.',
+    updatedLabel: 'Updated 1 month ago',
+    stage: 'evergreen',
+    lens: 'Interaction Design',
+    illustration: 'veil',
+  },
+  {
+    id: 'pt6',
+    title: 'Local-first Sync',
+    description: 'Prioritizing user agency and offline capabilities through decentralized data structures and CRDTs.',
+    updatedLabel: 'Updated 12 hours ago',
+    stage: 'seedling',
+    lens: 'Systems Thinking',
+    illustration: 'sync',
+  },
+];
+
 const smidgeons: SmidgeonItem[] = [
   {
     id: 's1',
@@ -252,6 +310,7 @@ const garden: GardenEntry[] = [
   { id: 'g-now', type: 'now', stage: 'evergreen', title: 'January 2026', description: 'A new now update about parenthood, work constraints, and perspective.', route: APP_ROUTES.now },
   { id: 'g-essay', type: 'essay', stage: 'budding', title: 'The Web is a Living Document', description: 'A longform essay on fluidity, typography, and designing for change.', imageUrl: essays[0].heroImageUrl, route: APP_ROUTES.writingDetail(essays[0].slug) },
   { id: 'g-note', type: 'note', stage: 'seedling', title: notes[0].title, description: notes[0].description, route: APP_ROUTES.notes },
+  { id: 'g-pattern', type: 'pattern', stage: 'evergreen', title: patterns[0].title, description: 'Recurring design patterns and conceptual frameworks for digital tools and cognitive architecture.', route: APP_ROUTES.patterns },
   { id: 'g-podcast', type: 'podcast', stage: 'evergreen', title: podcasts[0].title, description: 'Conversations, interviews, and audio explorations on design, systems, and digital craft.', route: APP_ROUTES.podcasts },
   { id: 'g-library', type: 'note', stage: 'budding', title: 'Library / Antilibrary', description: 'Books I like the idea of having read.', route: APP_ROUTES.library },
   { id: 'g-smidgeons', type: 'note', stage: 'seedling', title: 'Smidgeons Stream', description: 'A stream of links, papers, and tiny thoughts.', route: APP_ROUTES.smidgeons },
@@ -275,6 +334,7 @@ export const httpClient: HttpClient = {
     if (url === '/notes') return notes as T;
     if (url === '/now') return nowLog as T;
     if (url === '/library') return books as T;
+    if (url === '/patterns') return patterns as T;
     if (url === '/podcasts') return podcasts as T;
     if (url === '/smidgeons') return smidgeons as T;
     if (url === '/garden') return garden as T;
