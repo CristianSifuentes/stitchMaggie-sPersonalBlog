@@ -9,7 +9,7 @@ export function GardenPage() {
       <header className="garden-index-header">
         <span className="counter">162</span>
         <h1>The Garden</h1>
-        <p>A collection of essays, notes, patterns, talks, podcasts, and half-baked explorations I&apos;m always tending to.</p>
+        <p>A collection of essays, notes, talks, podcasts, and half-baked explorations I&apos;m always tending to.</p>
       </header>
 
       <div className="garden-controls">
@@ -23,9 +23,6 @@ export function GardenPage() {
           <option value="all">All Types</option>
           <option value="essay">Essay</option>
           <option value="note">Note</option>
-          <option value="pattern">Pattern</option>
-          <option value="talk">Talk</option>
-          <option value="podcast">Podcast</option>
           <option value="now">Now</option>
         </select>
       </div>
