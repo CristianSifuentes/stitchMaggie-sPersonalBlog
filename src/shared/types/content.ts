@@ -18,6 +18,55 @@ export interface BookItem {
   coverUrl: string;
 }
 
+export interface AntilibraryBook {
+  id: string;
+  title: string;
+  author: string;
+  summary: string;
+  coverUrl: string;
+  collection: 'reading' | 'to-read' | 'reference' | 'archive';
+  collectionLabel: string;
+  status: 'unread' | 'reading' | 'to-read' | 'reference' | 'archived';
+  stage: 'seedling' | 'budding' | 'evergreen';
+  accent: 'amber' | 'indigo' | 'green' | 'violet' | 'orange' | 'rose';
+}
+
+export interface PodcastEpisode {
+  id: string;
+  title: string;
+  description: string;
+  publishedLabel: string;
+  durationLabel: string;
+  stage: 'seedling' | 'budding' | 'evergreen';
+  series: string;
+  illustration: 'signal' | 'neural' | 'atlas' | 'draft' | 'archive' | 'blueprint';
+  isFeatured?: boolean;
+  isPopular?: boolean;
+}
+
+export interface TalkItem {
+  id: string;
+  title: string;
+  description: string;
+  dateLabel: string;
+  locationLabel: string;
+  kind: 'presentation' | 'workshop';
+  stage: 'seedling' | 'budding' | 'evergreen';
+  illustration: 'systems' | 'botany' | 'future' | 'structure' | 'emotion' | 'writing';
+  isFeatured?: boolean;
+}
+
+export interface PatternItem {
+  id: string;
+  title: string;
+  description: string;
+  updatedLabel: string;
+  stage: 'seedling' | 'budding' | 'evergreen';
+  lens: string;
+  illustration: 'thread' | 'field' | 'ambient' | 'links' | 'veil' | 'sync';
+  isFeatured?: boolean;
+}
+
 export interface SmidgeonItem {
   id: string;
   date: string;
@@ -29,7 +78,7 @@ export interface SmidgeonItem {
 
 export interface GardenEntry {
   id: string;
-  type: 'now' | 'essay' | 'note';
+  type: 'now' | 'essay' | 'note' | 'podcast' | 'pattern' | 'talk';
   stage: 'seedling' | 'budding' | 'evergreen';
   title: string;
   description: string;

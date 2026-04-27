@@ -1,6 +1,6 @@
 import { EssayDetail, EssaySummary } from '@/shared/types/essay';
 import { Post } from '@/shared/types/post';
-import { BookItem, GardenEntry, NoteItem, NowEntry, SmidgeonItem } from '@/shared/types/content';
+import { AntilibraryBook, BookItem, GardenEntry, NoteItem, NowEntry, PatternItem, PodcastEpisode, SmidgeonItem, TalkItem } from '@/shared/types/content';
 import { APP_ROUTES } from '@/app/config/routes';
 
 export interface HttpClient {
@@ -165,6 +165,271 @@ const books: BookItem[] = [
   { id: 'b4', title: 'The Age of Wonder', coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCf3OdHR2exsQYzYJsSfXGoLtYwWi7lL76NrRNjxZZ3CPuZhqjNy7fsPpo9nTYcA5R8VX2cT-oyuThG_mgpu9dal7jJ2qY-SCvgdEERupHqpN5FIg-J26c1y4Wuq7dMF86JYx6LgOgfljT6V3j0CqEoGVWcd003vzkqYhwMq2kPYW4QZW2_d9mFOdGwIcfjy5phluGO4ZzW6DTjtigS4rQGSzCtNw4Lg7GNTEDMtgbA30ja1XUBZU6fiS2_2cejGGRLpns-dRFB8Zw' },
 ];
 
+const antilibrary: AntilibraryBook[] = [
+  {
+    id: 'al1',
+    title: 'The Order of Time',
+    author: 'Carlo Rovelli',
+    summary: 'Explores the physics of time and how our perception of "now" is a local phenomenon.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8e47rSqWQ-hjjg8dqY1yBwFFgENDV9wIIEGKRyUhs_-AeSwHOltGrTwiP0SIl67sMoZ90n-MXEGb9nwTioqxw3vS7JFAvDVRHoePo3zfepbhQQ5dLyFwZzqYmccWGGPU4RA2qZJRm5kT6Z3Itxh-WgXF-w40e1tAgXPoVFbciJaDymt4tbX50mfIjQONcYm2SiMPfa5oHW3eYU5VihPOYpWN8DvHfH3lncA3YNQYdgz3bfUtGgW2SCJ-manWSo5cbKQLbNM07-i8',
+    collection: 'to-read',
+    collectionLabel: 'To Read',
+    status: 'unread',
+    stage: 'seedling',
+    accent: 'amber',
+  },
+  {
+    id: 'al2',
+    title: 'Metaphors We Live By',
+    author: 'George Lakoff',
+    summary: 'A foundational text for cognitive linguistics and the metaphors that shape thought.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCznSakO7eqLgqaIuc9PQ1cEXaFUvlCPxURiTfIChC6EUyjF0v61QcKJsR1Jh4jcaGmKoUiEkrdwzBOP3MZiedBO6EUkFt-CmBiWtxsunrpX01-R4MEOR8cchONyuuSVGiboFiS8y-_xE-HC5PFYDY6Ss1a6G4f2PxFVhKlHJrIUbLwRVTWiZH5KqEH8vnJ15MfriSqBDlsoOLEEL0SbEOM0VRZeRqOMA54e8-v9yMcoy_3vEai-WDIVO4khCjdSDO7D_rFp5kMEbw',
+    collection: 'reference',
+    collectionLabel: 'Reference Only',
+    status: 'reference',
+    stage: 'evergreen',
+    accent: 'indigo',
+  },
+  {
+    id: 'al3',
+    title: 'Staying with the Trouble',
+    author: 'Donna J. Haraway',
+    summary: 'A provocation on multispecies justice and surviving on a damaged planet.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzBQjfYXET-0FtvqWd1lIVDtG5oGdQf8QEK2DUQyP8dthS-Xd0rKo9Reme_5tW_h-HdZ69v06eWKKB40eI1hymzsncSWB0rbXudzPFljg73KHKT42w8xTATwv9oEChylbnskXEQK6fhVLhVrNeyUpYtHvXnx0HdX2DwnOtVWb2A2yaqLFwl0jcMqx4avQ1tTqJyi6E1gb8zfCGTz8kOfZWviE92BN88PI3RXtuKkXBBlSXp5NyBnDvV535vLjvv9__fYXZSMqB6jk',
+    collection: 'to-read',
+    collectionLabel: 'To Read',
+    status: 'to-read',
+    stage: 'seedling',
+    accent: 'green',
+  },
+  {
+    id: 'al4',
+    title: 'Finite and Infinite Games',
+    author: 'James P. Carse',
+    summary: 'A distinction between playing to win and playing to keep the game going.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAPmrPEbxUhA6Qcgo_qOdX4RN9OsC821gEdIU4QO_XCX7ZVYgJ27NVeLZIVYv-q9A4hIAXj-sZvjjhKjJsoqVSBWBidz5aVKtUP8Zkt057NZnU5msK4QY17rbJVJrxjEz8KIF1C3bAWsW2une8P-jk7MiVrWzz1OfAFt0BVLKSr7MyuZBFO14d10I6TRIXWdg0cSZ2g9Awza2MJ4IEnsaDdNbDMYb4WQyliNdWgl4S6N2JEHc9PMwDvW2OZh90wtCma6_mu7DnC3tI',
+    collection: 'archive',
+    collectionLabel: 'Archives',
+    status: 'archived',
+    stage: 'evergreen',
+    accent: 'violet',
+  },
+  {
+    id: 'al5',
+    title: 'The Spell of the Sensuous',
+    author: 'David Abram',
+    summary: 'A phenomenology of perception and the link between language and the animate earth.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBoPBcRKruINsNNEXhsc6aDHkOS5XXzR16gtL14Xb-f2xj5TA7Ki6vzsQa9oFlo7sOgmH5hgR2uwVxQ7z_iRiNhBSnrOF7_rKvGXpB7ZQZmeRXrhJK5cWgxRwpUG44BzhV9XrPi1kUYNO0RF9ojvm7eOdSgnycaxfS908wSNNfbtQThoLhnYYs3IzIUOdVt6Y1pHSyJyrTdtGhy-qk1IxiGOsNLSOzXSxdL__F-GH3ny9KNE-QSCJjS4QGlUtsdlTGtGoi1_Fq6ZxM',
+    collection: 'reference',
+    collectionLabel: 'Reference Only',
+    status: 'reference',
+    stage: 'budding',
+    accent: 'orange',
+  },
+  {
+    id: 'al6',
+    title: 'Braiding Sweetgrass',
+    author: 'Robin Wall Kimmerer',
+    summary: 'Indigenous wisdom and scientific knowledge interwoven through the teachings of plants.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC82jXrF0__DVZ4OLQXUEewgcm0L--_NrIJUpBRsytakE8mwPkbornw9tYOCYvNKLVvEs3VF0f3d02t2eeK00sRdqDkt6tkUue00JccG_Xxzs7ohcg_aTDDm5CdJvuwAoa9GMaXmRQt5u1QxOYlLx_E9DnLd6LGN-W6Cc4itvU81E1y_EjYL0vmNWabC7ZOcD13hj4m8-SR62uDTWGdWvFi3aUKLJ0jPS6vEFEGiEsSpcmSxIhszYzHmvEHdGDphC2NPYjvM3sunqk',
+    collection: 'reading',
+    collectionLabel: 'Currently Reading',
+    status: 'reading',
+    stage: 'budding',
+    accent: 'rose',
+  },
+];
+
+const podcasts: PodcastEpisode[] = [
+  {
+    id: 'p1',
+    title: 'The Future of Digital Gardens',
+    description: 'A deep dive into how we organize thoughts online, moving from static pages to living, breathing knowledge graphs.',
+    publishedLabel: 'Oct 2023',
+    durationLabel: '45 min',
+    stage: 'evergreen',
+    series: 'Evergreen Piece',
+    illustration: 'signal',
+    isFeatured: true,
+    isPopular: true,
+  },
+  {
+    id: 'p2',
+    title: 'Designing with AI Systems',
+    description: 'Discussing the intersection of LLMs and design tools, and how creative workflows are fundamentally shifting.',
+    publishedLabel: 'Sep 2023',
+    durationLabel: '52 min',
+    stage: 'budding',
+    series: 'Developing Idea',
+    illustration: 'neural',
+    isPopular: true,
+  },
+  {
+    id: 'p3',
+    title: 'Metaphors We Live By in UI',
+    description: 'Exploring how linguistic metaphors shape our interfaces and why we still use "folders" in a cloud-first world.',
+    publishedLabel: 'Aug 2023',
+    durationLabel: '38 min',
+    stage: 'evergreen',
+    series: 'Evergreen Piece',
+    illustration: 'atlas',
+    isPopular: true,
+  },
+  {
+    id: 'p4',
+    title: 'The Craft of Visual Thinking',
+    description: 'How to use drawing as a tool for understanding complex problems before touching a single line of code.',
+    publishedLabel: 'Jul 2023',
+    durationLabel: '60 min',
+    stage: 'seedling',
+    series: 'Initial Thoughts',
+    illustration: 'draft',
+  },
+  {
+    id: 'p5',
+    title: 'Building Knowledge Bases',
+    description: 'Practical strategies for managing digital notes across multiple tools without losing your mind.',
+    publishedLabel: 'Jun 2023',
+    durationLabel: '42 min',
+    stage: 'budding',
+    series: 'Developing Idea',
+    illustration: 'archive',
+  },
+  {
+    id: 'p6',
+    title: 'Architecture of Information',
+    description: 'Why the structure of our digital spaces matters as much as the content within them.',
+    publishedLabel: 'May 2023',
+    durationLabel: '55 min',
+    stage: 'evergreen',
+    series: 'Evergreen Piece',
+    illustration: 'blueprint',
+    isPopular: true,
+  },
+];
+
+const talks: TalkItem[] = [
+  {
+    id: 't1',
+    title: 'Building Scalable Design Systems',
+    description: 'A deep dive into creating robust component architecture for large product teams and enterprise interfaces.',
+    dateLabel: 'Oct 2023',
+    locationLabel: 'London',
+    kind: 'presentation',
+    stage: 'evergreen',
+    illustration: 'systems',
+    isFeatured: true,
+  },
+  {
+    id: 't2',
+    title: 'Digital Gardening 101',
+    description: 'An introduction to personal knowledge management and the craft of maintaining a living, evolving garden.',
+    dateLabel: 'Aug 2023',
+    locationLabel: 'New York',
+    kind: 'workshop',
+    stage: 'seedling',
+    illustration: 'botany',
+  },
+  {
+    id: 't3',
+    title: 'The Future of Web Interfaces',
+    description: 'Exploring AI-assisted products, spatial interactions, and why browser-native experiences still matter.',
+    dateLabel: 'Jun 2023',
+    locationLabel: 'Remote',
+    kind: 'presentation',
+    stage: 'budding',
+    illustration: 'future',
+  },
+  {
+    id: 't4',
+    title: 'UI Architecture Best Practices',
+    description: 'Principles and decision frameworks for building maintainable, accessible interfaces at scale.',
+    dateLabel: 'Jan 2023',
+    locationLabel: 'Berlin',
+    kind: 'presentation',
+    stage: 'evergreen',
+    illustration: 'structure',
+  },
+  {
+    id: 't5',
+    title: 'Design for Emotion',
+    description: 'How typography, pacing, and visual rhythm shape emotional tone in digital products.',
+    dateLabel: 'Nov 2022',
+    locationLabel: 'Paris',
+    kind: 'workshop',
+    stage: 'budding',
+    illustration: 'emotion',
+  },
+  {
+    id: 't6',
+    title: 'The Art of Documentation',
+    description: 'Treating docs as product surfaces to improve onboarding, developer flow, and team alignment.',
+    dateLabel: 'Sep 2022',
+    locationLabel: 'London',
+    kind: 'presentation',
+    stage: 'seedling',
+    illustration: 'writing',
+  },
+];
+
+const patterns: PatternItem[] = [
+  {
+    id: 'pt1',
+    title: 'Narrative Threading',
+    description: 'Techniques for maintaining semantic context across non-linear information paths in hyperlinked environments.',
+    updatedLabel: 'Updated 2 days ago',
+    stage: 'evergreen',
+    lens: 'Knowledge Design',
+    illustration: 'thread',
+    isFeatured: true,
+  },
+  {
+    id: 'pt2',
+    title: 'Spatial Interfaces',
+    description: 'Mapping digital information architecture to physical human intuition and muscle memory for better navigation.',
+    updatedLabel: 'Updated 1 week ago',
+    stage: 'budding',
+    lens: 'Navigation',
+    illustration: 'field',
+  },
+  {
+    id: 'pt3',
+    title: 'Ambient Awareness',
+    description: 'Designing low-friction signals of activity and presence in collaborative digital environments without noise.',
+    updatedLabel: 'Updated 3 days ago',
+    stage: 'seedling',
+    lens: 'Collaboration',
+    illustration: 'ambient',
+  },
+  {
+    id: 'pt4',
+    title: 'Bi-directional Links',
+    description: 'The architectural foundation of the associative web, allowing for mutual context and effortless discovery.',
+    updatedLabel: 'Updated 5 months ago',
+    stage: 'evergreen',
+    lens: 'Information Architecture',
+    illustration: 'links',
+  },
+  {
+    id: 'pt5',
+    title: 'Progressive Disclosure',
+    description: 'Managing system complexity by revealing information only as needed to achieve specific user goals.',
+    updatedLabel: 'Updated 1 month ago',
+    stage: 'evergreen',
+    lens: 'Interaction Design',
+    illustration: 'veil',
+  },
+  {
+    id: 'pt6',
+    title: 'Local-first Sync',
+    description: 'Prioritizing user agency and offline capabilities through decentralized data structures and CRDTs.',
+    updatedLabel: 'Updated 12 hours ago',
+    stage: 'seedling',
+    lens: 'Systems Thinking',
+    illustration: 'sync',
+  },
+];
+
 const smidgeons: SmidgeonItem[] = [
   {
     id: 's1',
@@ -184,11 +449,18 @@ const garden: GardenEntry[] = [
   { id: 'g-now', type: 'now', stage: 'evergreen', title: 'January 2026', description: 'A new now update about parenthood, work constraints, and perspective.', route: APP_ROUTES.now },
   { id: 'g-essay', type: 'essay', stage: 'budding', title: 'The Web is a Living Document', description: 'A longform essay on fluidity, typography, and designing for change.', imageUrl: essays[0].heroImageUrl, route: APP_ROUTES.writingDetail(essays[0].slug) },
   { id: 'g-note', type: 'note', stage: 'seedling', title: notes[0].title, description: notes[0].description, route: APP_ROUTES.notes },
+  { id: 'g-pattern', type: 'pattern', stage: 'evergreen', title: patterns[0].title, description: 'Recurring design patterns and conceptual frameworks for digital tools and cognitive architecture.', route: APP_ROUTES.patterns },
+  { id: 'g-talk', type: 'talk', stage: talks[0].stage, title: talks[0].title, description: 'Presentations, workshops, and lectures on design systems, web interfaces, and knowledge tools.', route: APP_ROUTES.talks },
+  { id: 'g-podcast', type: 'podcast', stage: 'evergreen', title: podcasts[0].title, description: 'Conversations, interviews, and audio explorations on design, systems, and digital craft.', route: APP_ROUTES.podcasts },
+  { id: 'g-antilibrary', type: 'note', stage: 'budding', title: 'Antilibrary', description: 'Unread books and reference shelves for future research and intellectual exploration.', route: APP_ROUTES.antilibrary },
   { id: 'g-library', type: 'note', stage: 'budding', title: 'Library / Antilibrary', description: 'Books I like the idea of having read.', route: APP_ROUTES.library },
   { id: 'g-smidgeons', type: 'note', stage: 'seedling', title: 'Smidgeons Stream', description: 'A stream of links, papers, and tiny thoughts.', route: APP_ROUTES.smidgeons },
 ];
 
-const essaySummaries: EssaySummary[] = essays.map(({ body: _body, ...summary }) => summary);
+const essaySummaries: EssaySummary[] = essays.map(({ body, ...summary }) => {
+  void body;
+  return summary;
+});
 
 export const httpClient: HttpClient = {
   async get<T>(url: string): Promise<T> {
@@ -203,6 +475,10 @@ export const httpClient: HttpClient = {
     if (url === '/notes') return notes as T;
     if (url === '/now') return nowLog as T;
     if (url === '/library') return books as T;
+    if (url === '/antilibrary') return antilibrary as T;
+    if (url === '/patterns') return patterns as T;
+    if (url === '/talks') return talks as T;
+    if (url === '/podcasts') return podcasts as T;
     if (url === '/smidgeons') return smidgeons as T;
     if (url === '/garden') return garden as T;
     throw new Error(`Unknown endpoint: ${url}`);

@@ -1,261 +1,217 @@
-# Maggie Appleton Portfolio Replica (Educational)
+# Stitch Maggie Personal Blog (React 2026-Style Architecture)
 
-A high-fidelity **educational replica** of [maggieappleton.com](https://maggieappleton.com/), implemented with a modern **React + TypeScript + Vite** stack and a feature-first architecture.
+A modern React personal-blog storefront inspired by Maggie Appleton's digital-garden style, designed with **enterprise-scalable feature boundaries** and aligned with practical React 2026 patterns:
 
-> **Important Notice**
->
-> This repository is a **non-commercial educational project** created to study and demonstrate advanced Front-End architecture patterns (and data-layer/back-end design concepts in a mock setup).  
-> It is **not affiliated with Maggie Appleton**, and it is **not intended for profit or impersonation**.
-
----
+- Concurrent-first UI behavior
+- Route-level code splitting by default
+- Server-state orchestration with TanStack Query
+- Explicit layering (`view -> hook -> manager -> repository`)
+- Feature-first architecture for team ownership
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Original Website](#original-website)
-- [Educational Intent & Disclaimer](#educational-intent--disclaimer)
-- [Current Project Scope](#current-project-scope)
-- [Architecture](#architecture)
-  - [Top-Level Structure](#top-level-structure)
-  - [Feature Module Pattern](#feature-module-pattern)
-  - [Layer Responsibilities](#layer-responsibilities)
 - [Tech Stack](#tech-stack)
-- [Implemented Pages](#implemented-pages)
-- [Data Layer & Mock Backend](#data-layer--mock-backend)
+- [Architecture (Scalable Team Structure)](#architecture-scalable-team-structure)
+- [Feature Boundaries](#feature-boundaries)
 - [Routing Map](#routing-map)
+- [Data and State Flow](#data-and-state-flow)
+- [Implemented React 2026 Paradigms](#implemented-react-2026-paradigms)
+- [React 2026 Migration Snapshot](#react-2026-migration-snapshot)
+- [Security Notes](#security-notes)
+- [AI-Powered CLI / MCP Readiness](#ai-powered-cli--mcp-readiness)
 - [Getting Started](#getting-started)
-- [Scripts](#scripts)
-- [Design System Notes](#design-system-notes)
-- [Roadmap](#roadmap)
-- [Credits](#credits)
-- [License](#license)
-
----
-
-## Overview
-
-This project replicates the feel, structure, and content model of Maggie Appleton’s website as an architectural exercise in:
-
-- scalable React application design,
-- feature-first modularization,
-- layered UI/data boundaries,
-- reusable composition patterns,
-- mock backend/domain modeling for content-driven experiences.
-
-The goal is to showcase **how to build and organize a complex content platform** (portfolio + garden + essays + notes + now log + library + smidgeons stream) with production-minded conventions.
-
----
-
-## Original Website
-
-- **Original project:** https://maggieappleton.com/
-
-This replica exists to learn from and honor the structure/design philosophy of the original while practicing advanced engineering architecture.
-
----
-
-## Educational Intent & Disclaimer
-
-- ✅ Educational only.
-- ✅ No monetization intent.
-- ✅ Demonstrates React and architecture concepts.
-- ❌ Not an official Maggie Appleton product.
-- ❌ Not intended for commercial usage or brand confusion.
-
-If you are looking for the authentic experience, please visit: **https://maggieappleton.com/**.
-
----
-
-## Current Project Scope
-
-Implemented as a multi-page content application with unified shell/navigation and route-level modules:
-
-- Home
-- Garden index
-- Essays collection
-- Individual essay reading view
-- Notes collection
-- Now log
-- About page
-- Library / Antilibrary
-- Smidgeons stream
-
----
-
-## Architecture
-
-### Top-Level Structure
-
-```txt
-src/
-├── app/                 # App bootstrap, providers, routes, guards, layout
-├── features/            # Domain-focused modules (home, garden, writing, notes, ...)
-└── shared/              # Cross-feature primitives (components, hooks, services, types, styles)
-```
-
-### Feature Module Pattern
-
-Each feature follows a layered, scalable pattern (as needed per domain):
-
-```txt
-features/<feature>/
-├── hooks/               # View-facing orchestration hooks
-├── services/            # Manager + Repository (use-case + data access)
-├── types/               # Feature contracts/types
-└── views/               # Route/page and feature UI components
-```
-
-### Layer Responsibilities
-
-- **View Layer (`views`, `hooks`)**  
-  UI rendering, interaction state, view-level orchestration.
-
-- **Application/Data Use-Case Layer (`services/*Manager`)**  
-  Data shaping, feature-level logic, filtering/transformations.
-
-- **Data Access Layer (`services/*Repository`)**  
-  Boundary to data source (`httpClient`), API-like contracts.
-
-- **Shared Layer (`shared/*`)**  
-  Global shell components, utility hooks, theme store, base types, global styles.
-
----
+- [Build and Quality Commands](#build-and-quality-commands)
+- [Current Status](#current-status)
+- [Disclaimer](#disclaimer)
 
 ## Tech Stack
 
-- **React** (SPA)
-- **TypeScript** (strict typing)
-- **Vite** (build/dev tooling)
-- **React Router** (routing)
-- **TanStack Query** (server-state/data fetching patterns)
-- **Zustand** (lightweight global theme state)
-- **ESLint** (code quality)
+- React 19 + React DOM 19
+- TypeScript (strict mode)
+- React Router DOM 7 (`createBrowserRouter`, `RouterProvider`)
+- TanStack React Query v5
+- Zustand (global UI state)
+- Vite 6 + `@vitejs/plugin-react`
+- ESLint 9 + `typescript-eslint`
+- CSS variables + handcrafted responsive design system
 
----
+## Architecture (Scalable Team Structure)
 
-## Implemented Pages
+```text
+src/
+  app/
+    config/          # central route constants
+    guards/          # cross-cutting route/feature guards
+    layout/          # application shell
+    providers/       # top-level runtime providers (Query, bootstrap)
+    routes/          # router composition + lazy route registration
+    App.tsx          # provider + suspense composition root
+  features/          # isolated business verticals
+    home/
+    garden/
+    writing/
+    notes/
+    patterns/
+    talks/
+    podcasts/
+    antilibrary/
+    now/
+    about/
+    library/
+    smidgeons/
+  shared/
+    components/      # reusable UI building blocks
+    hooks/           # cross-feature hooks
+    services/        # infra services (http client, zustand store)
+    styles/          # global design system CSS
+    types/           # cross-feature domain contracts
+  main.tsx           # strict-mode app bootstrap
+```
 
-- `/` → Home
-- `/garden` → Garden index (filterable content cards)
-- `/garden/essays` → Essays collection
-- `/garden/essays/:slug` → Essay detail
-- `/garden/notes` → Notes collection
-- `/now` → Now timeline/log
-- `/about` → About profile page
-- `/library` → Library / Antilibrary
-- `/smidgeons` → Smidgeons stream
+### Feature Module Shape
 
----
+Most verticals follow the same contract for predictability and future scaling:
 
-## Data Layer & Mock Backend
+```text
+features/<feature>/
+  hooks/      # feature view-model hooks (react-query + concurrency helpers)
+  services/   # repository + manager orchestration
+  types/      # feature-local contracts (when needed)
+  views/      # route-level UI
+```
 
-The project includes a local in-memory mock backend in:
+## Feature Boundaries
 
-- `src/shared/services/httpClient.ts`
-
-Available endpoints include:
-
-- `/posts`
-- `/garden`
-- `/essays`
-- `/essays/:slug`
-- `/notes`
-- `/now`
-- `/library`
-- `/smidgeons`
-
-This provides backend-like contracts while keeping the project self-contained for educational development.
-
----
+- `features/home` - hero + featured content composition
+- `features/garden` - unified garden index with typed filters
+- `features/writing` - essays collection + essay detail + hover/focus prefetch
+- `features/notes` - notes listing
+- `features/patterns` - searchable/filterable pattern language
+- `features/talks` - talks catalog with stage and kind filters
+- `features/podcasts` - podcasts catalog with curated filters
+- `features/antilibrary` - research shelf with collection segmentation
+- `features/library` - curated books grid
+- `features/now` - timeline-style status updates
+- `features/smidgeons` - short-form stream content
+- `features/about` - static profile section
 
 ## Routing Map
 
-`src/app/config/routes.ts` centralizes route constants for consistency and maintainability.
+- `/` -> Home
+- `/garden` -> Garden index
+- `/garden/essays` -> Writing collection
+- `/garden/essays/:slug` -> Essay detail
+- `/garden/notes` -> Notes
+- `/garden/patterns` -> Patterns
+- `/garden/talks` -> Talks
+- `/garden/podcasts` -> Podcasts
+- `/garden/antilibrary` -> Antilibrary
+- `/library` -> Library
+- `/smidgeons` -> Smidgeons
+- `/now` -> Now
+- `/about` -> About
 
-`src/app/routes/AppRouter.tsx` handles:
+All route pages are lazily imported and rendered behind a shared Suspense boundary.
 
-- lazy route loading,
-- guarded feature routes,
-- fallback navigation.
+## Data and State Flow
 
----
+Primary runtime flow:
+
+```text
+View Component
+  -> Feature Hook (React Query + UI state/concurrency)
+    -> Manager (business rules / filtering / orchestration)
+      -> Repository (endpoint access)
+        -> shared/services/httpClient (typed data source abstraction)
+```
+
+State model:
+
+- Server state: TanStack Query (`useQuery`, cache, stale/gc tuning)
+- UI global state: Zustand (`themeStore`)
+- View-local transition state: `useState` + `useTransition`
+- Search smoothing: `useDeferredValue` (patterns search)
+
+## Implemented React 2026 Paradigms
+
+- [x] React 19 strict bootstrap (`StrictMode` in `main.tsx`)
+- [x] Concurrent UI primitives (`useTransition`, `useDeferredValue`)
+- [x] Route-level code splitting (`lazy` + `Suspense`)
+- [x] Intent-driven prefetching (`prefetchQuery` on card hover/focus)
+- [x] Feature-first architecture with clear ownership boundaries
+- [x] Layered domain orchestration (hook/manager/repository)
+- [x] Typed server-state integration with TanStack Query v5
+- [x] Centralized route contract (`APP_ROUTES`)
+- [x] Shared app shell with layout composition (`RootLayout`)
+- [x] Accessibility baseline (`aria-label`, `aria-live`, semantic landmarks)
+- [x] Theme state via lightweight store + DOM theme sync
+- [x] Strict TypeScript + path alias imports (`@/*`)
+
+### Not Yet Implemented (Roadmap Alignment)
+
+- [ ] SSR/streaming/hydration pipeline
+- [ ] React Server Components architecture
+- [ ] Test runner setup (Vitest + React Testing Library)
+- [ ] Tailwind CSS utility layer (currently custom CSS system)
+- [ ] CSP + hardened runtime headers in deployment entry
+
+## React 2026 Migration Snapshot
+
+| Legacy Approach | React 2026 Recommended | This Project |
+| --- | --- | --- |
+| Monolithic folder-by-type app | Feature-first ownership | Implemented |
+| Fetching directly in components | Query hooks + domain manager/repository layers | Implemented |
+| Synchronous heavy filter updates | Concurrent UI (`useTransition`, `useDeferredValue`) | Implemented |
+| Eager route bundle | Route-level lazy loading + Suspense | Implemented |
+| Ad hoc global state | Minimal dedicated store (Zustand) for cross-cutting UI state | Implemented |
+| No query caching strategy | TanStack Query cache/stale tuning | Implemented |
+| Pure CSR forever | SSR/RSC-ready architecture direction | Planned |
+| No automated test harness | Vitest + RTL | Planned |
+
+In short: this repository is already **concurrent-ready, feature-oriented, and cache-aware**. The next architectural jump is SSR/RSC plus test infrastructure.
+
+## Security Notes
+
+- No `dangerouslySetInnerHTML` usage in the current app surface.
+- Data is rendered through typed React bindings and domain contracts.
+- Route access can be constrained through feature guards (`FeatureFlagGuard`).
+- Security headers/CSP are not yet configured in this repository and should be added at deployment/runtime boundary.
+
+## AI-Powered CLI / MCP Readiness
+
+This repository is organized for AI-assisted development workflows (including MCP-style tooling) through:
+
+- strict feature directory conventions,
+- predictable service and hook layering,
+- reusable shared contracts/components,
+- centralized route definitions,
+- explicit module boundaries that reduce ambiguous edits.
 
 ## Getting Started
 
-### 1) Install dependencies
-
 ```bash
 npm install
-```
-
-### 2) Run development server
-
-```bash
 npm run dev
 ```
 
-### 3) Build for production
+## Build and Quality Commands
 
 ```bash
 npm run build
-```
-
-### 4) Preview production build
-
-```bash
 npm run preview
+npm run lint
+npm run typecheck
 ```
 
----
+## Current Status
 
-## Scripts
+- `npm install` succeeded
+- `npm run build` succeeded
+- Vite development build target is functioning
 
-- `npm run dev` → start Vite dev server
-- `npm run build` → type-check and build
-- `npm run preview` → preview built app
-- `npm run lint` → run ESLint
-- `npm run typecheck` → run TypeScript checks
+## Disclaimer
 
----
+This project is an educational architecture demonstration inspired by Maggie Appleton's digital-garden domain and UI style.
 
-## Design System Notes
-
-The app uses a shared global styling system in:
-
-- `src/shared/styles/global.css`
-
-It includes:
-
-- theme tokens (light/dark),
-- typography scales for editorial layouts,
-- reusable section/card/timeline patterns,
-- responsive behavior for content-first pages.
-
----
-
-## Roadmap
-
-Potential next steps:
-
-- richer route-level loading/error boundaries,
-- SSR-compatible adaptation path,
-- real CMS/API integration,
-- accessibility audit pass (landmarks, keyboard nav, contrast tuning),
-- test suite (unit + integration + visual regression).
-
----
-
-## Credits
-
-- Original creative work and website inspiration: **Maggie Appleton**  
-  https://maggieappleton.com/
-
-- This codebase: educational architecture + implementation exercise.
-
----
-
-## License
-
-MIT (for the code in this repository).
-
-> Please respect third-party intellectual property and brand identity when creating replicas.
+Original inspiration:
+- https://maggieappleton.com/

@@ -21,6 +21,11 @@ export function Header() {
               <NavLink to={APP_ROUTES.garden}>Garden Home</NavLink>
               <NavLink to={APP_ROUTES.writing}>Essays</NavLink>
               <NavLink to={APP_ROUTES.notes}>Notes</NavLink>
+              <NavLink to={APP_ROUTES.patterns}>Patterns</NavLink>
+              <NavLink to={APP_ROUTES.talks}>Talks</NavLink>
+              <NavLink to={APP_ROUTES.podcasts}>Podcasts</NavLink>
+              <NavLink to={APP_ROUTES.antilibrary}>Antilibrary</NavLink>
+              <NavLink to={APP_ROUTES.library}>Library</NavLink>
               <NavLink to={APP_ROUTES.smidgeons}>Smidgeons</NavLink>
             </div>
           </div>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { APP_ROUTES } from '@/app/config/routes';
 import { useLibrary } from '@/features/library/hooks/useLibrary';
 
 export function LibraryPage() {
@@ -7,7 +9,10 @@ export function LibraryPage() {
   return (
     <section className="container library-page">
       <header>
-        <span className="counter">29</span>
+        <div className="collection-breadcrumb">
+          <span>{data.length.toString().padStart(2, '0')}</span>
+          <Link to={APP_ROUTES.garden}>Back to Garden</Link>
+        </div>
         <h1>Library | Antilibrary</h1>
         <p>Books I like the idea of having read.</p>
       </header>
