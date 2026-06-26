@@ -20,6 +20,8 @@ export interface NoteItem {
 export interface BookItem {
   id: string;
   title: string;
+  author: string;
+  note: string;
   coverUrl: string;
 }
 

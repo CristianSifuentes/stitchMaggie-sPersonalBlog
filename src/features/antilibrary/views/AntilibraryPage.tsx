@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/app/config/routes';
 import { useAntilibrary } from '@/features/antilibrary/hooks/useAntilibrary';
@@ -65,9 +66,9 @@ function formatCount(value: number) {
   return value.toString().padStart(2, '0');
 }
 
-function BookCard({ book }: { book: AntilibraryBook }) {
+function BookCard({ book, index }: { book: AntilibraryBook; index: number }) {
   return (
-    <article className="antilibrary-book">
+    <article className="antilibrary-book" style={{ '--anti-i': index } as React.CSSProperties}>
       <div className="antilibrary-book__cover" data-accent={book.accent}>
         <img src={book.coverUrl} alt={book.title} loading="lazy" />
         <span className="antilibrary-book__status" data-status={book.status}>
@@ -149,8 +150,8 @@ export function AntilibraryPage() {
       {(isLoading || isPending) && <p className="collection-loading">Reordering shelves...</p>}
 
       <div className="antilibrary-grid">
-        {books.map((book) => (
-          <BookCard key={book.id} book={book} />
+        {books.map((book, i) => (
+          <BookCard key={book.id} book={book} index={i} />
         ))}
       </div>
 

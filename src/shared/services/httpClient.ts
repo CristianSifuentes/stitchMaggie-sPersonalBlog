@@ -457,10 +457,62 @@ const nowLog: NowEntry[] = [
 ];
 
 const books: BookItem[] = [
-  { id: 'b1', title: 'Age of Ambition: Chasing Fortune, Truth, and Faith in the New China', coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxfk646tvmz3MrMYANF4bWJkzPQ2rN5I39mkwzCGEt93QFFjPAdPJa_DpiLCM0iz1mC4PcaedQpyTDOOsRFIwdrIWSI-er4Dws-W8PvDVjSz0W4gi4WVUZTfg085GcZYZCTToKTceynMOaTsuv5rZ5JLMdAMd19pgQlhPYpqYgzYbba82T1NLvES8Ib3DC7nmV6hTQw3E3dWpdJl_j3glTznndL_kypy2uSx_BoPQqIMPKP4himXp0asf_uT1CzjKOgY3xJ0c9YPw' },
-  { id: 'b2', title: 'Cue the Sun! The Invention of Reality TV', coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxOPf_GGCCjn4S85X21ititGPCxu79iSil6JEHRW6Cm0bilx8DI7ixKlXXx8j3sVXtzj6TVfjpaHcN8hQbQtj6zZ3tk8GRCu1b_mHxpP7JVYEKz9oVaPk2T_AQ0AH8YEAAZzuni2vjQt0kqPUmzHDNxyZm6wJawT2z7GNMmLMlF-TtDi62Gw9r4HIFbHf1Vs_aVRemfz8vDOXiAas9TCtGJx77vQnJp6hWcJuM_er8ROK3Tku3CDyPhWmwwm2j952eYompLVs4dnc' },
-  { id: 'b3', title: "The Invention of Nature: Alexander von Humboldt's New World", coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB86MBtTr3AnfiP1juo3x-MY6_phxRt1sINsCXhcQTFgZDgP9QKjCNhNvLUGITAbkSXnuVXgaNUuLkRuqQ5ou90VIjqHEH1U3enz725FkCozoNPdGIQa0-YvIHlcWmySXxYCV2_qKFprVoRW10KavqrCzdsGRi5Td2u4ngQman66A1shZFmZOMPu9hlBh_PyshC6Z2L70m4arsHR3fkdl-jgEnuZl8-cRJz1QX-jJDSVnCMaZzr-5d3eWMa0uJJ4YYQlu5ie3-ffqw' },
-  { id: 'b4', title: 'The Age of Wonder', coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCf3OdHR2exsQYzYJsSfXGoLtYwWi7lL76NrRNjxZZ3CPuZhqjNy7fsPpo9nTYcA5R8VX2cT-oyuThG_mgpu9dal7jJ2qY-SCvgdEERupHqpN5FIg-J26c1y4Wuq7dMF86JYx6LgOgfljT6V3j0CqEoGVWcd003vzkqYhwMq2kPYW4QZW2_d9mFOdGwIcfjy5phluGO4ZzW6DTjtigS4rQGSzCtNw4Lg7GNTEDMtgbA30ja1XUBZU6fiS2_2cejGGRLpns-dRFB8Zw' },
+  {
+    id: 'b1',
+    title: 'Age of Ambition',
+    author: 'Evan Osnos',
+    note: 'A portrait of a generation redefining ambition on an unprecedented scale. The best piece of longform reporting I have ever read.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxfk646tvmz3MrMYANF4bWJkzPQ2rN5I39mkwzCGEt93QFFjPAdPJa_DpiLCM0iz1mC4PcaedQpyTDOOsRFIwdrIWSI-er4Dws-W8PvDVjSz0W4gi4WVUZTfg085GcZYZCTToKTceynMOaTsuv5rZ5JLMdAMd19pgQlhPYpqYgzYbba82T1NLvES8Ib3DC7nmV6hTQw3E3dWpdJl_j3glTznndL_kypy2uSx_BoPQqIMPKP4himXp0asf_uT1CzjKOgY3xJ0c9YPw',
+  },
+  {
+    id: 'b2',
+    title: 'Cue the Sun!',
+    author: 'Emily Nussbaum',
+    note: 'The definitive cultural history of reality television and the American id. Nussbaum makes you laugh and then makes you uncomfortable about the laughing.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxOPf_GGCCjn4S85X21ititGPCxu79iSil6JEHRW6Cm0bilx8DI7ixKlXXx8j3sVXtzj6TVfjpaHcN8hQbQtj6zZ3tk8GRCu1b_mHxpP7JVYEKz9oVaPk2T_AQ0AH8YEAAZzuni2vjQt0kqPUmzHDNxyZm6wJawT2z7GNMmLMlF-TtDi62Gw9r4HIFbHf1Vs_aVRemfz8vDOXiAas9TCtGJx77vQnJp6hWcJuM_er8ROK3Tku3CDyPhWmwwm2j952eYompLVs4dnc',
+  },
+  {
+    id: 'b3',
+    title: "The Invention of Nature",
+    author: 'Andrea Wulf',
+    note: "Humboldt invented the modern idea of nature as a living whole. Wulf resurrects him with the intensity he deserves.",
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB86MBtTr3AnfiP1juo3x-MY6_phxRt1sINsCXhcQTFgZDgP9QKjCNhNvLUGITAbkSXnuVXgaNUuLkRuqQ5ou90VIjqHEH1U3enz725FkCozoNPdGIQa0-YvIHlcWmySXxYCV2_qKFprVoRW10KavqrCzdsGRi5Td2u4ngQman66A1shZFmZOMPu9hlBh_PyshC6Z2L70m4arsHR3fkdl-jgEnuZl8-cRJz1QX-jJDSVnCMaZzr-5d3eWMa0uJJ4YYQlu5ie3-ffqw',
+  },
+  {
+    id: 'b4',
+    title: 'The Age of Wonder',
+    author: 'Richard Holmes',
+    note: 'The Romantic era told through its scientists — Banks, Davy, Herschel. Poetry and discovery were once the same thing.',
+    coverUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCf3OdHR2exsQYzYJsSfXGoLtYwWi7lL76NrRNjxZZ3CPuZhqjNy7fsPpo9nTYcA5R8VX2cT-oyuThG_mgpu9dal7jJ2qY-SCvgdEERupHqpN5FIg-J26c1y4Wuq7dMF86JYx6LgOgfljT6V3j0CqEoGVWcd003vzkqYhwMq2kPYW4QZW2_d9mFOdGwIcfjy5phluGO4ZzW6DTjtigS4rQGSzCtNw4Lg7GNTEDMtgbA30ja1XUBZU6fiS2_2cejGGRLpns-dRFB8Zw',
+  },
+  {
+    id: 'b5',
+    title: 'The Dispossessed',
+    author: 'Ursula K. Le Guin',
+    note: 'A physicist travels between two worlds — one free, one ordered — and finds both lacking. The most rigorous utopia ever written.',
+    coverUrl: 'https://covers.openlibrary.org/b/isbn/0061054887-L.jpg',
+  },
+  {
+    id: 'b6',
+    title: 'Ways of Seeing',
+    author: 'John Berger',
+    note: 'Seven essays that permanently altered how I look at images, advertising, and who controls the gaze. Required reading before making anything.',
+    coverUrl: 'https://covers.openlibrary.org/b/isbn/0140135154-L.jpg',
+  },
+  {
+    id: 'b7',
+    title: 'Invisible Cities',
+    author: 'Italo Calvino',
+    note: 'Marco Polo describes impossible cities to Kublai Khan. Architecture as philosophy, longing, and the limits of imagination.',
+    coverUrl: 'https://covers.openlibrary.org/b/isbn/0156453800-L.jpg',
+  },
+  {
+    id: 'b8',
+    title: 'The Design of Everyday Things',
+    author: 'Don Norman',
+    note: 'The book that made me angry at every bad door handle I have ever touched. Changed how I see every interface permanently.',
+    coverUrl: 'https://covers.openlibrary.org/b/isbn/0465067107-L.jpg',
+  },
 ];
 
 const antilibrary: AntilibraryBook[] = [
