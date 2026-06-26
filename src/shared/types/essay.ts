@@ -1,5 +1,17 @@
 export type EssayCategory = 'engineering' | 'design' | 'anthropology';
-export type EssayVisual = 'bulb' | 'cards' | 'planet';
+export type EssayVisual =
+  | 'bulb'
+  | 'cards'
+  | 'planet'
+  | 'folk'
+  | 'diagram'
+  | 'legible'
+  | 'memex'
+  | 'presence'
+  | 'venn'
+  | 'theory'
+  | 'forest'
+  | 'iceberg';
 
 export interface EssaySummary {
   slug: string;

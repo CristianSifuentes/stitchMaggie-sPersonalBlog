@@ -55,7 +55,13 @@ function EssayCollectionCardImpl({ essay }: EssayCollectionCardProps) {
         </div>
 
         <div className="essay-collection-card-copy">
+          <span className="essay-collection-card-category">{essay.category}</span>
           <h2>{essay.title}</h2>
+          <p className="essay-collection-card-excerpt">{essay.excerpt}</p>
+          <footer className="essay-collection-card-meta">
+            <span>{essay.readTimeMinutes} min read</span>
+            <span>{new Date(essay.publishedAt).getFullYear()}</span>
+          </footer>
         </div>
       </Link>
     </article>

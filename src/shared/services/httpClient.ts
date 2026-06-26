@@ -138,6 +138,294 @@ const essays: EssayDetail[] = [
       figureImageUrl: 'https://images.unsplash.com/photo-1516382799247-87df95d790b7?auto=format&fit=crop&w=1400&q=80',
     },
   },
+  {
+    slug: 'folk-interfaces',
+    title: 'Folk Interfaces',
+    excerpt: 'How people build their own tools, hacks, and workarounds when software fails to meet them where they are.',
+    readTimeMinutes: 8,
+    publishedAt: '2021-11-03',
+    heroImageUrl: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=1400&q=80',
+    category: 'engineering',
+    visual: 'folk',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Visual Dispatch',
+    body: {
+      intro:
+        'Before Figma, before Adobe, before the GUI—people were already designing. They just called it something else. Folk interfaces are the handmade tools, workarounds, and joyful hacks that emerge when people refuse to let software limit what they can do.',
+      sectionTitle: 'When Users Become Makers',
+      sectionBody:
+        "A spreadsheet with embedded colour-coded rituals. A text file with a personal syntax no one else can read. A Notion dashboard restructured each week because last week's structure no longer matches how the mind is working. These are not failures of the software. They are people doing what humans have always done: adapting the tools at hand to fit the shape of their lives.",
+      quote:
+        'The folk artefacts of any era are its best design criticism. They reveal, with devastating precision, what the official tools got wrong.',
+      typographyTitle: 'The Craft of the Workaround',
+      typographyBody:
+        'When we encounter a workaround, we tend to see inefficiency. But there is another way to read it: as a form of feedback, a signal that the designed path was not the natural one. Workarounds are hypotheses about better tools. Some of them are even correct.',
+      typographyBody2:
+        "Design teams would do well to study the folk interfaces that emerge in the wake of their products. Users don't always articulate what they need—but they build it, quietly, in the margins of the tools they were given.",
+      conclusion:
+        'Every spreadsheet-as-database is a protest. Every personal text-file syntax is a manifesto. Folk interfaces are not edge cases—they are the point. They are where human ingenuity lives when official design fails to make room for it.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1568209865332-a15790aed756?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'drawing-invisible-systems',
+    title: 'Drawing Invisible Systems',
+    excerpt: 'Visual thinking as a method for making the abstract tangible—and why diagrams are a form of argument.',
+    readTimeMinutes: 7,
+    publishedAt: '2022-02-14',
+    heroImageUrl: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1400&q=80',
+    category: 'design',
+    visual: 'cards',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Field Notes Studio',
+    body: {
+      intro:
+        'Some ideas resist language. The moment you commit them to a sentence, something important slips away—the multiplicity, the feedback loops, the simultaneity. Drawing is a different kind of thinking. It makes room for things that words cannot hold.',
+      sectionTitle: 'The Argument of the Diagram',
+      sectionBody:
+        'A diagram is not a neutral representation. It is a claim. Every box you draw asserts that this thing is a unit. Every arrow claims a relationship. The space between elements says something about distance and independence. When we draw a system, we are not documenting it—we are arguing for a particular way of seeing it.',
+      quote:
+        'The best diagrams are not illustrations of ideas. They are the ideas themselves, given a form that the eye can travel and the hand can dispute.',
+      typographyTitle: 'Sketching as Method, Not Output',
+      typographyBody:
+        'We tend to treat visual thinking as a precursor to real work—the rough stage before the polished deliverable. But for many designers and researchers, the sketch is the site of the actual thinking. The act of drawing surfaces contradictions that would otherwise stay buried in the prose.',
+      typographyBody2:
+        'When you draw a process as a diagram, you have to decide where it starts and ends. That decision, so easy to skip in writing, becomes unavoidable on the page. The boundary you draw is the insight.',
+      conclusion:
+        'Visual thinking does not simplify complex systems. It complicates them in the right way—by making their structure visible, arguable, and changeable. The invisible becomes something you can point at, argue with, and improve.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'how-humans-became-legible',
+    title: 'How Humans Became Legible',
+    excerpt: "On James Scott's Seeing Like a State, the violence of classification, and why maps always leave something out.",
+    readTimeMinutes: 9,
+    publishedAt: '2022-06-20',
+    heroImageUrl: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1400&q=80',
+    category: 'anthropology',
+    visual: 'planet',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Archive Remix',
+    body: {
+      intro:
+        "James Scott's Seeing Like a State opens with a provocation: modern states require their subjects to be legible. To be counted. To be categorised. To fit into systems that can be administered from a distance. The violence of this requirement is subtle, but it runs very deep.",
+      sectionTitle: 'The Cost of Being Seen',
+      sectionBody:
+        'Before standardised surnames, many people were known by their place, their trade, or their relationship: John the Miller, Mary of the Hill, Thomas son of Richard. This naming was local, contextual, and sufficient for the communities that used it. When states needed to count people—for taxes, for armies—that richness became a liability. Names had to be fixed, transferable, and unique across large distances.',
+      quote:
+        'To be made legible by a state is to have your complexity reduced to what the state can use. The remainder is not recorded. It simply ceases to exist, officially.',
+      typographyTitle: 'Digital Legibility and Its Costs',
+      typographyBody:
+        'Every form you fill out on the internet is a small act of becoming legible to a system. You accept its categories—your gender from a dropdown, your occupation from a list—or you leave the field blank and become, in that small way, invisible to the system that needs you to be countable.',
+      typographyBody2:
+        'Platform designers make these choices constantly: which categories to offer, which fields to require, what it means to leave something blank. These decisions are not neutral. They determine whose lives can be represented and whose are left as remainder.',
+      conclusion:
+        'Legibility is not the same as understanding. The map that makes a city governable also makes it less of a city—more grid, less neighbourhood. We should design systems that can hold complexity, not ones that require us to shed it to get through the door.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'a-brief-history-of-tools-for-thought',
+    title: 'A Brief History of Tools for Thought',
+    excerpt: "From Vannevar Bush's Memex to Roam Research—tracing our long obsession with building machines to think with.",
+    readTimeMinutes: 10,
+    publishedAt: '2022-10-08',
+    heroImageUrl: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1400&q=80',
+    category: 'engineering',
+    visual: 'bulb',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Studio Fluids',
+    body: {
+      intro:
+        'In 1945, Vannevar Bush imagined a machine he called the Memex—a desk fitted with a screen and controls that would let a scientist navigate their entire library as if by thought, leaving trails of association that could be shared with colleagues. He never built it. But the idea has been haunting us ever since.',
+      sectionTitle: 'The Unrealised Dream',
+      sectionBody:
+        "Douglas Engelbart spent most of his career trying to build Bush's dream. His 1968 demonstration—the Mother of All Demos—showed a system with hypertext, collaborative editing, and a mouse. The audience was stunned. And then decades passed, and almost none of it made it into the mainstream. The tools that won were simpler, easier to ship, and far less ambitious.",
+      quote:
+        'Every generation of tool builders inherits the same unfulfilled promise: that we might one day build a machine worthy of the complexity of thought itself.',
+      typographyTitle: 'The Garden Grows Slowly',
+      typographyBody:
+        "The digital garden movement is the latest iteration of this dream. It trades databases and algorithms for something older and stranger: tending. You don't architect a garden. You plant things, see what grows, prune what doesn't, and return to it over time. The metaphor is not incidental—it changes what you believe software should do.",
+      typographyBody2:
+        "Roam Research, Obsidian, Notion, and their kin are experiments in personal knowledge infrastructure. They don't solve the problem Bush articulated. But they keep it alive, which may be the most important thing. The dream of the Memex keeps us from accepting that software has already reached its ceiling.",
+      conclusion:
+        'Tools for thought are a form of optimism. Each new tool carries the claim that human cognition is worth extending—that the mind, given the right scaffold, can reach further than it could alone. We have not built the Memex yet. But we are still trying. That matters more than we admit.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'designing-for-ambient-co-presence',
+    title: 'Designing for Ambient Co-presence',
+    excerpt: 'What remote collaboration tools get wrong about the feeling of being together in a shared space.',
+    readTimeMinutes: 8,
+    publishedAt: '2023-01-25',
+    heroImageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80',
+    category: 'design',
+    visual: 'cards',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Visual Dispatch',
+    body: {
+      intro:
+        'Before the pandemic, remote work was something companies permitted reluctantly and employees practised with apology. After it, we learned something uncomfortable: the tools we had built for remote work were designed for the exception, not the rule. They were built for absence, not presence.',
+      sectionTitle: 'The Signal We Actually Send',
+      sectionBody:
+        'In an office, presence is ambient. You know whether your colleague is at their desk, in a conversation, or staring at their screen with the particular intensity that means do not interrupt me. You learn this without trying. The office provides a continuous low-bandwidth signal about the state of the people around you. Remote work has almost nothing like this.',
+      quote:
+        'A green dot on a Slack profile is not presence. It is the ghost of presence—a status update wearing the costume of a human signal.',
+      typographyTitle: 'Designing Peripheral Vision',
+      typographyBody:
+        "The best tools for co-presence are not video calls. Video calls are high-bandwidth interruptions. What we actually need are low-bandwidth continuous signals—the digital equivalent of seeing someone's coat on a chair and knowing they are nearby. This is peripheral vision, and almost no software is designed for it.",
+      typographyBody2:
+        "Some tools are beginning to explore this space: Figma's live cursors, Linear's presence indicators, the humble typing indicator in a chat app. Each is a small attempt to make absence feel less absolute. The space ahead of us is vast and almost entirely unexplored.",
+      conclusion:
+        'Co-presence is not a feature. It is a fundamental quality of collaborative environments that we have barely begun to understand in digital space. The challenge is not to replicate the office—it is to understand what made the office work, and to build something that does the same thing differently.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'the-technical-and-the-cultural',
+    title: 'The Technical and the Cultural Are the Same Thing',
+    excerpt: 'Why the division between hard technical problems and soft cultural ones is a fiction worth dismantling.',
+    readTimeMinutes: 9,
+    publishedAt: '2023-05-11',
+    heroImageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80',
+    category: 'anthropology',
+    visual: 'planet',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Field Notes Studio',
+    body: {
+      intro:
+        'There is a habit of mind, common in engineering culture, that treats social and cultural factors as complications layered on top of a neutral technical substrate. The real problem is technical. The cultural stuff is just context. This habit of mind is wrong—and understanding why reveals something important about how technology actually works.',
+      sectionTitle: 'Technology Is Always Already Cultural',
+      sectionBody:
+        "Langdon Winner's famous question—Do Artefacts Have Politics?—was not asking whether people have used technology for political ends. Of course they have. He was asking something harder: whether the design of an artefact, independent of how it is used, can carry political content. His answer, developed through careful case studies, was yes.",
+      quote:
+        'A bridge with a low clearance that keeps buses out of certain neighbourhoods is not a neutral structure. It is a decision about who gets to move through the world, encoded in concrete.',
+      typographyTitle: 'Interface as Ideology',
+      typographyBody:
+        'Digital interfaces are not neutral surfaces. They embed assumptions about users—who they are, how they think, what they need. These assumptions are cultural. They are also invisible in the way that all default assumptions are invisible: you only notice them when you are the person they were not designed for.',
+      typographyBody2:
+        'The work of inclusive design is not cosmetic. It is not about adding features for edge cases. It is about recognising that the default user is always a cultural construction—and choosing, deliberately, to expand whose experience counts as normal.',
+      conclusion:
+        'The technical and the cultural are not two layers of the same thing. They are the same thing. Every technical decision is a cultural decision. Every design choice reflects a theory of human nature. The only question is whether we make those choices consciously or let them crystallise, unexamined, into the structure of our systems.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1526378787940-576a539ba69d?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'programming-as-theory-building',
+    title: 'Programming as Theory Building',
+    excerpt: "Peter Naur's radical thesis: a program is not the code, but the shared understanding held in the minds of its makers.",
+    readTimeMinutes: 11,
+    publishedAt: '2023-09-28',
+    heroImageUrl: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80',
+    category: 'engineering',
+    visual: 'bulb',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Maggie Studio',
+    body: {
+      intro:
+        'In 1985, the Danish computer scientist Peter Naur published an essay that most programmers have never read. Its title was Programming as Theory Building. Its argument, stated simply, is this: the primary product of programming is not the code. It is the shared understanding—the theory—that the programmers hold in their minds.',
+      sectionTitle: 'What Dies When Programmers Leave',
+      sectionBody:
+        "Naur's essay was motivated by a problem everyone in software recognises but struggles to name: why is it so hard to modify or maintain a programme whose original authors have left? We tend to blame documentation. But Naur argued that documentation was a symptom, not a cause. The real loss is the theory. The understanding of why the programme is shaped the way it is.",
+      quote:
+        'A programme is a solution to a problem. But the solution and the problem live, primarily, in the minds of the people who built it—not in the code itself.',
+      typographyTitle: 'The Limits of Legibility',
+      typographyBody:
+        'We have invested enormously in making code readable: naming conventions, linting, documentation generators, architecture diagrams. All of these help. But they capture the what, not the why. The theory—the web of decisions, constraints, trade-offs, and abandoned alternatives—resists encoding. It is tacit knowledge, and tacit knowledge lives in people, not files.',
+      typographyBody2:
+        'This has implications beyond software. Any complex system built by a team of people carries a theory in the minds of its builders. When those people leave, the theory degrades. What remains is an artefact whose behaviour can be studied but whose rationale may be permanently lost.',
+      conclusion:
+        'Programming is not a solitary act of writing. It is a collective act of understanding. The code is evidence of that understanding—but it is not the understanding itself. We need to think much more carefully about what it means to maintain not just software, but the human knowledge that makes software meaningful.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1545670723-196ed0954986?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'the-dark-forest-internet',
+    title: 'The Dark Forest Theory of the Internet',
+    excerpt: 'Why the public web is getting quieter, and where all the real conversations went.',
+    readTimeMinutes: 9,
+    publishedAt: '2023-11-15',
+    heroImageUrl: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80',
+    category: 'design',
+    visual: 'cards',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Archive Remix',
+    body: {
+      intro:
+        'The public internet has been getting quieter. Not in terms of traffic—traffic is stratospheric. But in terms of voices. The people who used to write publicly, in their own spaces, have mostly retreated. Their blogs went dark. Their forums closed. And yet they are still here. They just moved somewhere you cannot easily see them.',
+      sectionTitle: 'Why the Forest Went Dark',
+      sectionBody:
+        "Liu Cixin's science fiction novel The Dark Forest offers a metaphor that has proven strangely apt. In the novel, the universe is silent not because it is empty but because every civilisation, upon becoming detectable, is immediately eliminated. The rational strategy is to stay hidden. The silence of the cosmos is not emptiness—it is concealment.",
+      quote:
+        'The incentive structure of the public internet now punishes authenticity and rewards performance. What you say in public can be archived, decontextualised, and weaponised. The prudent response is silence.',
+      typographyTitle: 'Where the Conversation Went',
+      typographyBody:
+        "The conversation did not disappear. It moved to private newsletters, closed Discord servers, group chats, and invite-only communities. These spaces are not searchable. They are not indexed. They do not contribute to the public record. They are, in the metaphor, dark forests—alive with activity, but invisible to anyone who hasn't been welcomed in.",
+      typographyBody2:
+        'This matters for design. It means that the surfaces we build for public expression are increasingly used for performance rather than genuine communication. The people who would speak genuinely have moved to smaller rooms. The designers of public platforms should ask: what would it take to make public expression feel safe again?',
+      conclusion:
+        'The dark forest internet is not a crisis of content. It is a crisis of trust. We built the public web without asking whether it would be possible to be vulnerable in it. Now we are learning the answer. The next generation of tools will need to make privacy and intimacy the design goal, not the afterthought.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
+  {
+    slug: 'we-know-more-than-we-can-tell',
+    title: 'We Know More Than We Can Tell',
+    excerpt: "Michael Polanyi's tacit knowledge and what it means that the most important things resist explanation.",
+    readTimeMinutes: 10,
+    publishedAt: '2024-04-20',
+    heroImageUrl: 'https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=1400&q=80',
+    category: 'anthropology',
+    visual: 'planet',
+    author: 'Maggie Appleton',
+    authorRole: 'Design Anthropologist',
+    authorAvatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80',
+    illustrationCredit: 'Field Notes Studio',
+    body: {
+      intro:
+        'Michael Polanyi began his most famous book with a sentence so simple it sounds almost trivial: we know more than we can tell. The depth of this observation only becomes apparent when you try to explain something you know perfectly well how to do—how to ride a bicycle, how to recognise a face, how to tell when a conversation is going wrong. The knowledge is real. The explanation fails.',
+      sectionTitle: 'The Iceberg of Skill',
+      sectionBody:
+        "We live in a culture that privileges explicit knowledge—the kind you can write down, transfer, measure, and certify. Degrees, credentials, documentation, specifications. These are the visible portion of the iceberg. Beneath the surface sits something vast and largely invisible: the tacit knowledge that makes explicit knowledge usable. The surgeon who knows when something feels wrong. The programmer who senses a bad abstraction before they can name why. The designer who reads a mockup and says this doesn't work.",
+      quote:
+        'Tacit knowledge is not a gap in what we understand. It is the foundation on which all understanding rests. The map is always smaller than the territory it was made to navigate.',
+      typographyTitle: 'What Survives the Documentation',
+      typographyBody:
+        'The knowledge management industry—Notion, Roam, Obsidian, Confluence, all of it—is built on the assumption that knowledge can be captured and transferred. And some of it can. But the most important knowledge in any organisation tends to be the kind that walks out the door when people leave.',
+      typographyBody2:
+        'This is not a technological problem. No software will solve it. It is a structural problem about how humans learn—through practice, through imitation, through working alongside people who know things they cannot fully explain. Mentorship is not a soft benefit. It is the transmission medium for tacit knowledge.',
+      conclusion:
+        'We have built extraordinary tools for the explicit layer of knowledge. We have barely begun to think about the tacit layer. The most important things—craft, judgement, intuition, expertise—resist our best documentation efforts. Maybe that is not a failure to be solved. Maybe it is a reminder that learning is irreducibly human, and that some knowledge can only be passed between people.',
+      figureImageUrl:
+        'https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=1400&q=80',
+    },
+  },
 ];
 
 const notes: NoteItem[] = [

@@ -16,7 +16,7 @@ export function WritingPage() {
     <section className="container essays-collection-page">
       <header className="essays-collection-header">
         <div className="collection-breadcrumb">
-          <span>18</span>
+          <span>{isLoading ? '—' : orderedEssays.length.toString().padStart(2, '0')}</span>
           <Link to={APP_ROUTES.garden}>Back to Garden</Link>
         </div>
 
