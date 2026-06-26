@@ -5,11 +5,16 @@ export interface NowEntry {
   muted?: boolean;
 }
 
+export type NoteStage = 'seedling' | 'budding' | 'evergreen';
+export type NoteTopic = 'tools' | 'design' | 'engineering' | 'cognition' | 'culture' | 'learning' | 'writing' | 'knowledge-management' | 'collaboration' | 'philosophy' | 'technology' | 'illustration' | 'education' | 'statistics' | 'research' | 'language';
+
 export interface NoteItem {
   id: string;
   title: string;
   description: string;
   ageLabel: string;
+  stage: NoteStage;
+  topics: NoteTopic[];
 }
 
 export interface BookItem {
