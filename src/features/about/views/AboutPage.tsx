@@ -2,7 +2,7 @@ export function AboutPage() {
   return (
     <section className="container about-page">
       <header>
-        <p>About</p>
+        <p className="page-eyebrow">About</p>
         <h1>Maggie Appleton</h1>
         <h2>Designer, anthropologist, and mediocre developer.</h2>
       </header>

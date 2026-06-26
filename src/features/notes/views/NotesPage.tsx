@@ -16,7 +16,7 @@ export function NotesPage() {
       <div className="notes-grid">
         {data.map((note) => (
           <article key={note.id}>
-            <span>✦</span>
+            <span className="notes-grid__bullet">✦</span>
             <h2>{note.title}</h2>
             <p>{note.description}</p>
             <small>Note • {note.ageLabel}</small>

@@ -13,8 +13,8 @@ export function LibraryPage() {
           <span>{data.length.toString().padStart(2, '0')}</span>
           <Link to={APP_ROUTES.garden}>Back to Garden</Link>
         </div>
-        <h1>Library | Antilibrary</h1>
-        <p>Books I like the idea of having read.</p>
+        <h1>Library</h1>
+        <p>Books I&apos;ve read and loved.</p>
       </header>
       <div className="library-grid">
         {data.map((book) => (

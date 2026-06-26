@@ -56,11 +56,12 @@ a { text-decoration: none; color: inherit; }
 .garden-index-header h1,.notes-page h1,.library-page h1,.smidgeons-page h1,.about-page h1,.now-page h1,.essays-collection-header h1 { font-family:'Playfair Display',serif; font-size:clamp(3.4rem,8vw,7rem); margin:.4rem 0; }
 .garden-index-header p,.notes-page header p,.library-page header p,.smidgeons-page header p,.about-page h2,.now-intro,.essays-collection-header p { color:var(--muted); font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,3.1rem); max-width: 48ch; margin:0; }
 .collection-breadcrumb,.back-link { display:inline-block; font-size:.75rem; text-transform:uppercase; letter-spacing:.2em; font-weight:700; color:var(--muted); margin-bottom:1.3rem; }
+.page-eyebrow { display:block; margin:0 0 .6rem; color:var(--teal); font-size:.8rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; }
 .collection-breadcrumb { display:flex; gap:.7rem; align-items:center; }
-.collection-breadcrumb span { color:var(--teal); font-size:1.2rem; letter-spacing:0; }
+.collection-breadcrumb span { color:var(--teal); font-size:1.2rem; letter-spacing:0; font-family:'Playfair Display',serif; }
 
 .garden-controls { display:flex; gap:.8rem; margin:2rem 0 1rem; }
-.garden-controls select{ padding:.6rem .8rem; border:1px solid var(--line); border-radius:.5rem; background:var(--surface); color:var(--text); }
+.garden-controls select{ padding:.6rem .8rem; border:1px solid var(--line); border-radius:.5rem; background:var(--surface); color:var(--text); font-family:inherit; font-size:.9rem; cursor:pointer; }
 .garden-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem; }
 .garden-card { border:1px solid var(--line); background:var(--surface); border-radius:.7rem; padding:1rem; display:block; }
 .garden-card img { width:100%; height:180px; object-fit:cover; border-radius:.5rem; margin-bottom:.6rem; }
@@ -70,7 +71,9 @@ a { text-decoration: none; color: inherit; }
 .garden-card small{ text-transform:capitalize; color:var(--primary); }
 
 .essays-card-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2rem; }
-.essay-collection-card { border:1px solid var(--line); background:var(--surface); border-radius:.6rem; min-height:420px; }
+.essay-collection-card { border:1px solid var(--line); background:var(--surface); border-radius:.6rem; min-height:420px; transition:border-color .22s ease, box-shadow .22s ease, transform .22s ease; }
+.essay-collection-card:hover { border-color:color-mix(in srgb, var(--primary) 22%, var(--line)); box-shadow:0 12px 28px rgba(0,0,0,.07); transform:translateY(-3px); }
+.essay-collection-card > a { display:block; height:100%; }
 .essay-collection-card-visual { min-height:300px; display:grid; place-items:center; }
 .essay-collection-card-copy { padding:1.3rem 1.8rem 2rem; }
 .essay-collection-card-copy h2 { margin:0; font-family:'Playfair Display',serif; font-size:2.05rem; line-height:1.18; }
@@ -89,6 +92,7 @@ a { text-decoration: none; color: inherit; }
 .essay-body aside{ border:1px solid var(--line); background:var(--surface); padding:1rem; border-radius:.5rem; }
 .essay-author-footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:1rem; align-items:center; }
 .essay-author{ display:flex; gap:.7rem; align-items:center; }
+.essay-author p { margin:0; font-size:.88rem; color:var(--muted); }
 .essay-author img{ width:2.8rem; height:2.8rem; border-radius:999px; object-fit:cover; }
 .essay-next-link{ border:1px solid var(--line); border-radius:999px; padding:.5rem .8rem; font-family:'Noto Sans',sans-serif; font-size:.9rem; }
 
@@ -104,6 +108,7 @@ a { text-decoration: none; color: inherit; }
 .about-grid img{ width:100%; border-radius:.7rem; }
 
 .notes-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2.2rem; margin-top:2rem; }
+.notes-grid__bullet { color:var(--teal); font-size:.85rem; line-height:1; }
 .notes-grid article{ display:grid; gap:.6rem; }
 .notes-grid h2{ font-family:Lora,serif; font-size:2rem; margin:0; }
 .notes-grid p{ color:var(--muted); margin:0; font-size:1.05rem; }
